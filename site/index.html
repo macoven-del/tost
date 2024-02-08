@@ -114,12 +114,12 @@ TOSTADAS is flexible, allowing you to choose which portions of the pipeline to r
 <h3 id="metadata-validation">Metadata Validation</h3>
 <p>The validation workflow checks that user provided metadata conforms to NCBI standards and matches the input data file(s). To allow for easy multi-sample submission, TOSTADAS can split a multi-sample Excel (.xlsx) file into separate tab delimited files (.tsv) for each individual sample.</p>
 <p>TOSTADAS can accept custom metadata fields specific to a users' pathogen, sample type, or workflow. Additionally, TOSTADAS offers powerful validation tools for user- created fields, allowing users to specify which samples to apply rules to, replace empty values with user specified replacements, rename existing fields and other operations. These features can be enabled with the validate_custom_fields parameter. Custom fields can be specified using the custom_fields_file parameter.</p>
-<p>A full guide to using custom metadata fields can be found here: Custom Metadata Guide</p>
+<p>A full guide to using custom metadata fields can be found here: <a href="https://github.com/CDCgov/tostadas/blob/457242fb15973f69cb3578367317a8b5e7c619f7/docs/custom_metadata_guide.md">Custom Metadata Guide</a></p>
 <h3 id="gene-annotation">Gene Annotation</h3>
 <p>TOSTADAS offers three optional annotation options:</p>
 <h4 id="repeatmasker-and-liftoff">RepeatMasker and Liftoff</h4>
 <p>The RepeatMasker and Liftoff workflow annotates fasta-formatted sequences based upon a provided reference and annotation file. This workflow was optimized for variola genome annotation and may require modification for other pathogens. This workflow runs RepeatMasker to annotate repeat motifs, followed by Liftoff to annotate functional regions. These results are combined into a single feature file (.gff3). The Liftoff annotation workflow requires a reference genome (.fasta), reference feature .gff, single sample .fasta files, and metadata in Excel .xlsx format. Be sure to specify the correct database in the params for this option.
-[RepeatMasker and Liftoff Example] (Link)</p>
+<a href="Link">RepeatMasker and Liftoff Example</a></p>
 <h4 id="vadr">VADR</h4>
 <p>The VADR workflow annotates fasta-formatted viral genomes using RefSeq annotation from a set of homologous reference models. This workflow requires single sample fasta files, metadata in .xlsx format, and reference information for the pathogen genome. TOSTADAS comes packaged with support for [monkeypox (mpxv) annotation] (https://github.com/CDCgov/tostadas/tree/master/vadr_files/mpxv-models). You can find information on other supported pathogens at the [VADR GitHub Repository] (https://github.com/ncbi/vadr).
 [VADR Example] (Link)</p>
@@ -211,5 +211,5 @@ TOSTADAS is flexible, allowing you to choose which portions of the pipeline to r
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-02-08 13:26:42.853887+00:00
+Build Date UTC : 2024-02-08 13:40:20.715063+00:00
 -->
