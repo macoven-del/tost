@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Quick Start - TOSTADAS</title>
+        <title>Get in Touch - TOSTADAS</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -36,14 +36,14 @@
                             <li class="navitem">
                                 <a href="../installation/" class="nav-link">Install</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Quick Start</a>
+                            <li class="navitem">
+                                <a href="../quickstart/" class="nav-link">Quick Start</a>
                             </li>
                             <li class="navitem">
                                 <a href="../links/" class="nav-link">Helpful Links</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../getintouch/" class="nav-link">Get in Touch</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Get in Touch</a>
                             </li>
                         </ul>
 
@@ -54,12 +54,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../installation/" class="nav-link">
+                                <a rel="prev" href="../links/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../links/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -80,86 +80,18 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#quick-start" class="nav-link">Quick Start</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#steps" class="nav-link">Steps</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#profile-options-and-input-files" class="nav-link">Profile Options and Input Files</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="quick-start">Quick Start</h1>
-<h2 id="steps">Steps</h2>
-<p>(1) Check that you are in the directory where the TOSTADAS repository was installed by running <code>pwd</code>
-Expected Output:</p>
-<ul>
-<li><code>/path/to/working/directory/tostadas</code>
-This is the default directory set in  nextflow.config for the provided test input files.</li>
-</ul>
-<p>(2) Change the submission_config parameter within <code>test_params.config</code> or <code>nextflow.config</code> (if running with your own data) to the location of your personal submission config file. Note that we provide a virus and bacterial test config depending on the use case.
-❗ You must have your personal submission configuration file set up before running the default parameters for the pipeline and/or if you plan on using sample submission at all. More information on setting this up can be found here: More Information on Submission</p>
-<p>(3) Pipeline Execution Examples
-We describe a few use-cases of the pipeline below. For more information on input parameters, refer to the documentation found in the following pages:</p>
-<h2 id="profile-options-and-input-files">Profile Options and Input Files</h2>
-<h3 id="parameters">Parameters</h3>
-<p>❗ Note: For all use cases, the paths to the required files should be specified in the nextflow.config file or the params.yaml file.</p>
-<h4 id="use-case-1-running-annotation-and-submission">Use Case 1: Running Annotation and Submission</h4>
-<ol>
-<li>Annotate viral assemblies and submit to GenBank and SRA</li>
-</ol>
-<p>Required files: fasta files, metadata file</p>
-<ul>
-<li><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus --genbank --sra --submission_wait_time 5</code></li>
-</ul>
-<h5 id="breakdown">Breakdown:</h5>
-<p><code>-profile:</code>
-This parameter is required. Specify the profile and run-time environment (<code>singularity</code>, <code>docker</code> or <code>conda</code>). Conda implementation is less stable, <code>singularity</code> or <code>docker</code> is recommended.
-<code>--virus:</code>
-The pathogen type is specified as <code>virus</code>
-<code>--sra:</code>
-<code>sra</code> is specified as the database to submit to
-<code>--submission_wait_time</code>:
-This parameter is optional. Running the pipeline with default parameters will trigger a wait time equal to # of samples * 180 seconds. This default parameter can be overridden by supplying an integer value to the <code>submission_wait_time</code> parameter.
-<code>--genbank</code>:
-<code>genbank</code> is specified as the database to submit to
-❗ Pre-requisite to submit to GenBank: In order to submit to GenBank, the program table2asn must be executable in your local environment. Copy the program table2asn to you tostadas/bin directory by running the following lines of code:</p>
-<ul>
-<li><code>cd ./tostadas/bin/</code></li>
-<li><code>wget https://ftp.ncbi.nlm.nih.gov/asn1-converters/by_program/table2asn/linux64.table2asn.gz</code></li>
-<li><code>gunzip linux64.table2asn.gz</code></li>
-<li>
-<p><code>mv linux64.table2asn table2asn</code></p>
-</li>
-<li>
-<p>Annotate bacterial assemblies and submit to GenBank and SRA **</p>
-</li>
-</ul>
-<p>Required files: fasta files, metadata file</p>
-<p>(A) Download BAKTA Database</p>
-<ul>
-<li>
-<p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --bacteria --genbank --sra --submission_wait_time 5 --download_bakta_db --bakta_db_type &lt;light/full&gt;</code>
-(B) Provide path to existing BAKTA Database</p>
-</li>
-<li>
-<p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --bacteria --genbank --sra --submission_wait_time 5 --bakta_db_path</code></p>
-</li>
-</ul>
-<p>Breakdown:</p>
-<p><code>--bacteria</code>:
-The pathogen type is specified as <code>bacteria</code>
-<code>--genbank</code>:
-<code>genbank</code> is specified as the database to submit to</p></div>
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html></div>
             </div>
         </div>
 
