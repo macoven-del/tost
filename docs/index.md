@@ -16,7 +16,7 @@ The validation workflow checks that user provided metadata conforms to NCBI stan
 
 TOSTADAS can accept custom metadata fields specific to a users' pathogen, sample type, or workflow. Additionally, TOSTADAS offers powerful validation tools for user- created fields, allowing users to specify which samples to apply rules to, replace empty values with user specified replacements, rename existing fields and other operations. These features can be enabled with the validate_custom_fields parameter. Custom fields can be specified using the custom_fields_file parameter.
 
-A full guide to using custom metadata fields can be found here: Custom Metadata Guide
+A full guide to using custom metadata fields can be found here: [Custom Metadata Guide](https://github.com/CDCgov/tostadas/blob/457242fb15973f69cb3578367317a8b5e7c619f7/docs/custom_metadata_guide.md)
 
 ### Gene Annotation
 TOSTADAS offers three optional annotation options:
@@ -24,7 +24,7 @@ TOSTADAS offers three optional annotation options:
 #### RepeatMasker and Liftoff
 
 The RepeatMasker and Liftoff workflow annotates fasta-formatted sequences based upon a provided reference and annotation file. This workflow was optimized for variola genome annotation and may require modification for other pathogens. This workflow runs RepeatMasker to annotate repeat motifs, followed by Liftoff to annotate functional regions. These results are combined into a single feature file (.gff3). The Liftoff annotation workflow requires a reference genome (.fasta), reference feature .gff, single sample .fasta files, and metadata in Excel .xlsx format. Be sure to specify the correct database in the params for this option.
-[RepeatMasker and Liftoff Example] (Link)
+[RepeatMasker and Liftoff Example](Link)
 
 #### VADR
 
