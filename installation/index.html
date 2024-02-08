@@ -71,18 +71,73 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#environment-setup" class="nav-link">Environment Setup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nextflow-install" class="nav-link">Nextflow Install</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<html>
-<head><title>301 Moved Permanently</title></head>
-<body>
-<center><h1>301 Moved Permanently</h1></center>
-<hr><center>nginx</center>
-</body>
-</html></div>
+<h1 id="installation">Installation</h1>
+<h2 id="environment-setup">Environment Setup</h2>
+<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on Page X - CDC User Guide</p>
+<p>(1) Clone the repository to your local machine:
+* <code>git clone https://github.com/CDCgov/tostadas.git</code>
+❗ Note: If you have mamba or nextflow installed in your local environment, you may skip steps 2, 3 (mamba installation) and 6 (nextflow installation) accordingly.</p>
+<p>(2) Install Mamba:
+* <code>curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh</code>
+* <code>bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/mambaforge</code>
+(3) Add mamba to PATH:
+* <code>export PATH="$HOME/mambaforge/bin:$PATH"</code>
+(4) Create the conda environment:
+If you want to create the full-conda environment needed to run the pipeline outside of Nextflow (this enables you to run individual python scripts), then proceed with step 4a.</p>
+<p>If you want to run the pipeline using nextflow only (this will be most users), proceed with step 4b. Nextflow will handle environment creation and you would only need to install the nextflow package locally vs the entire environment.</p>
+<pre><code>   (4a) Create the conda environment and install the dependencies set in your environment.yml:
+</code></pre>
+<ul>
+<li><code>cd tostadas</code></li>
+<li>
+<p><code>mamba env create -n tostadas -f environment.yml</code> <br />
+       (4b) Create an empty conda environment:</p>
+</li>
+<li>
+<p><code>conda create --name tostadas</code>
+(5) Activate the environment.</p>
+</li>
+<li><code>conda activate tostadas</code>
+Verify which environment is active by running the following conda command: * <code>conda env list</code> . The active environment will be denoted with an asterisk *</li>
+</ul>
+<p>(6) Install Nextflow using Use Mamba and the Bioconda Channel:
+* <code>mamba install -c bioconda nextflow</code>
+❗ Optionally, you may install nextflow without mamba by following the instructions found in the Nextflow Installation Documentaion Page: </p>
+<h2 id="nextflow-install">Nextflow Install</h2>
+<p>(7) Ensure Nextflow was installed successfully by running nextflow -v
+Expected Output:</p>
+<ul>
+<li><code>nextflow version &lt;CURRENT VERSION&gt;</code>
+The exact version of Nextflow returned will differ from installation to installation. It is important that the command execute successfully, and a version number is returned.</li>
+</ul>
+<p>(8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:</p>
+<h3 id="for-virus-reads">For Virus Reads</h3>
+<ul>
+<li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --virus</code></li>
+</ul>
+<h3 id="for-bacterial-reads">For Bacterial Reads</h3>
+<ul>
+<li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --bacteria</code> 
+The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the --output_dir flag in your nextflow run command.</li>
+</ul></div>
             </div>
         </div>
 
