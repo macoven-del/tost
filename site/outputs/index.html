@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../parameters/">
+      
+      
+        <link rel="next" href="../submission/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -206,7 +210,7 @@
         
   
   <span class="md-ellipsis">
-    Install
+    Installation
   </span>
   
 
@@ -227,6 +231,94 @@
   
   <span class="md-ellipsis">
     Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile Options and Input Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Outputs
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submission Guide
   </span>
   
 
@@ -306,13 +398,65 @@
                   
 
 
-<html>
-<head><title>301 Moved Permanently</title></head>
-<body>
-<center><h1>301 Moved Permanently</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
+  <h1>Outputs</h1>
+
+<p>Outputs
+RamiyapriyaS edited this page 5 hours ago · 3 revisions
+The following section walks through the outputs from the pipeline.</p>
+<p>6.1 Pipeline Overview:
+The workflow will generate outputs in the following order:</p>
+<p>Validation
+Responsible for QC of metadata
+Aligns sample metadata .xlsx to sample .fasta
+Formats metadata into .tsv format
+Annotation
+Extracts features from .gff
+Aligns features
+Annotates sample genomes outputting .gff
+Submission
+Formats for database submission
+This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint only_update_submission can be run as many times as necessary until all files are fully uploaded.
+6.2 Output Directory Formatting:
+The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:</p>
+<p>validation_outputs (name configurable with val_output_dir)
+name of metadata sample file
+errors
+fasta
+tsv_per_sample
+liftoff_outputs (name configurable with final_liftoff_output_dir)
+name of metadata sample file
+errors
+fasta
+liftoff
+tbl
+vadr_outputs (name configurable with vadr_output_dir)
+name of metadata sample file
+errors
+fasta
+gffs
+tbl
+bakta_outputs (name configurable with bakta_output_dir)
+name of metadata sample file
+fasta
+gff
+tbl
+submission_outputs (name and path configurable with submission_output_dir)
+name of annotation results (Liftoff or VADR, etc.)
+individual_sample_batch_info
+biosample_sra
+genbank
+accessions.csv
+terminal_outputs
+commands_used
+6.3 Understanding Pipeline Outputs:
+The pipeline outputs include:</p>
+<p>metadata.tsv files for each sample
+separate fasta files for each sample
+separate gff files for each sample
+separate tbl files containing feature information for each sample
+submission log file
+This output is found in the submission_outputs file in your specified output_directory
+If the file can not be found you can run the only_update_submission entrypoint for the pipeline</p>
 
 
 
