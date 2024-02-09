@@ -503,16 +503,18 @@
 <p>The following section walks through the outputs from the pipeline.</p>
 <h2 id="61-pipeline-overview">6.1 Pipeline Overview:</h2>
 <p>The workflow will generate outputs in the following order:</p>
-<p>Validation
-Responsible for QC of metadata
+<ul>
+<li>Validation</li>
+<li>Responsible for QC of metadata
 Aligns sample metadata .xlsx to sample .fasta
 Formats metadata into .tsv format
-Annotation
-Extracts features from .gff
+*Annotation</li>
+<li>Extracts features from .gff
 Aligns features
 Annotates sample genomes outputting .gff
 Submission
-Formats for database submission</p>
+Formats for database submission</li>
+</ul>
 <p>This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint <code>only_update_submission</code> can be run as many times as necessary until all files are fully uploaded.</p>
 <h2 id="62-output-directory-formatting">6.2 Output Directory Formatting:</h2>
 <p>The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:</p>
