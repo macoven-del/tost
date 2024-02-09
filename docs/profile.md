@@ -1,13 +1,14 @@
-Profile Options & Input Files
-RamiyapriyaS edited this page 40 minutes ago · 8 revisions
+# Profile Options & Input Files
+
 This section walks through the available parameters to customize your workflow.
 
-Input Files Required:
+## Input Files Required:
 (A) This table lists the required files to run metadata validation and annotation:
-Input files	File type	Description
-Running Annotation and Submission		
-fasta	.fasta	Single sample fasta sequence file(s)
-metadata	.xlsx	Multi-sample metadata matching metadata spreadsheets provided in input_files
+|Input files	|File type	|Description|
+|---------------|-----------|-----------|
+|Running Annotation and Submission|||		
+|fasta	|.fasta	|Single sample fasta sequence file(s)|
+|metadata	|.xlsx	|Multi-sample metadata matching metadata spreadsheets provided in input_files|
 Running Submission only without Annotation (Raw Files)		
 fasta	.fasta	Single sample fasta sequence file(s)
 metadata	.xlsx	Multi-sample metadata matching metadata spreadsheets provided in input_files
