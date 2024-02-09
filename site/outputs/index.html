@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#outputs" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -292,6 +297,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Outputs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -302,6 +320,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Pipeline Overview:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-output-directory-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Output Directory Formatting:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-understanding-pipeline-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Understanding Pipeline Outputs:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -384,6 +448,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Pipeline Overview:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-output-directory-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Output Directory Formatting:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-understanding-pipeline-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Understanding Pipeline Outputs:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -398,13 +499,10 @@
                   
 
 
-  <h1>Outputs</h1>
-
-<p>Outputs
-RamiyapriyaS edited this page 5 hours ago · 3 revisions
-The following section walks through the outputs from the pipeline.</p>
-<p>6.1 Pipeline Overview:
-The workflow will generate outputs in the following order:</p>
+<h1 id="outputs">Outputs</h1>
+<p>The following section walks through the outputs from the pipeline.</p>
+<h2 id="61-pipeline-overview">6.1 Pipeline Overview:</h2>
+<p>The workflow will generate outputs in the following order:</p>
 <p>Validation
 Responsible for QC of metadata
 Aligns sample metadata .xlsx to sample .fasta
@@ -414,10 +512,10 @@ Extracts features from .gff
 Aligns features
 Annotates sample genomes outputting .gff
 Submission
-Formats for database submission
-This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint only_update_submission can be run as many times as necessary until all files are fully uploaded.
-6.2 Output Directory Formatting:
-The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:</p>
+Formats for database submission</p>
+<p>This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint <code>only_update_submission</code> can be run as many times as necessary until all files are fully uploaded.</p>
+<h2 id="62-output-directory-formatting">6.2 Output Directory Formatting:</h2>
+<p>The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:</p>
 <p>validation_outputs (name configurable with val_output_dir)
 name of metadata sample file
 errors
@@ -447,9 +545,9 @@ biosample_sra
 genbank
 accessions.csv
 terminal_outputs
-commands_used
-6.3 Understanding Pipeline Outputs:
-The pipeline outputs include:</p>
+commands_used</p>
+<h2 id="63-understanding-pipeline-outputs">6.3 Understanding Pipeline Outputs:</h2>
+<p>The pipeline outputs include:</p>
 <p>metadata.tsv files for each sample
 separate fasta files for each sample
 separate gff files for each sample

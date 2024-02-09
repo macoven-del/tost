@@ -3,7 +3,7 @@
 This section walks through the available parameters to customize your workflow.
 
 ## Input Files Required:
-(A) This table lists the required files to run metadata validation and annotation:
+### (A) This table lists the required files to run metadata validation and annotation:
 
 |Input files	|File type	|Description|
 |---------------|-----------|-----------|
@@ -19,7 +19,7 @@ This section walks through the available parameters to customize your workflow.
 
 Here is an example of how this would look like.
 
-(B) This table lists the required files to run with submission:
+### (B) This table lists the required files to run with submission:
 
 |Input files	|File type	|Description|
 |fasta	|.fasta	|Single sample fasta sequence file(s) sequences|
@@ -36,7 +36,7 @@ The nextflow.config file is where parameters can be adjusted based on preference
 
 Adjust your file inputs within standard_params.config ensuring accurate file paths for the inputs listed above. The params can be changed within the standard_params.config or you can change the standard.yml/standard.json file inside the params directory and pass it in with: `-params-file <standard_params.yml or standard_params.json>`
 
-❗ DO NOT EDIT the main.nf file unless familiar with editing nextflow workflows
+❗ DO NOT EDIT the `main.nf` file unless familiar with editing nextflow workflows
 
 ### Customizing Parameters from the Command Line
 Parameters can be overridden during runtime by providing various flags to the nextflow command.
@@ -72,21 +72,21 @@ The submission component of the pipeline is adapted from SeqSender public databa
 
 NCBI: If uploading to NCBI archives such as BioSample/SRA/Genbank, you must complete the following steps:
 
-Create a center account: Contact the following e-mail for account creation: sra@ncbi.nlm.nih.gov  and provide the following information:
-Suggested center abbreviation (16 char max)
-Center name (full), center URL & mailing address (including country and postcode)
-Phone number (main phone for center or lab)
-Contact person (someone likely to remain at the location for an extended time)
-Contact email (ideally a service account monitored by several people)
-Whether you intend to submit via FTP or command line Aspera (ascp)
-Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.
-GISAID: A GISAID account is required for submission to GISAID, you can register for an account at https://www.gisaid.org/. Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at hcov-19@gisaid.org to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.
+* Create a center account: Contact the following e-mail for account creation: sra@ncbi.nlm.nih.gov  and provide the following information:
+ * Suggested center abbreviation (16 char max)
+ * Center name (full), center URL & mailing address (including country and postcode)
+ * Phone number (main phone for center or lab)
+ * Contact person (someone likely to remain at the location for an extended time)
+ * Contact email (ideally a service account monitored by several people)
+ * Whether you intend to submit via FTP or command line Aspera (ascp)
+ * Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.
+ * GISAID: A GISAID account is required for submission to GISAID, you can register for an account at (https://www.gisaid.org/). Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at (hcov-19@gisaid.org) to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.
 
 #### (B) Config File Set-up:
 
-The template for the submission config file can be found in bin/default_config_files within the repo. This is where you can edit the various parameters you want to include in your submission. Read more at the SeqSender docs.
-You can find more information on how to setup your own submission config and additional information on fields in the following guide: Submission Config Guide.
-❗ Pre-requisite to submit to GenBank: Copy the program table2asn to you tostadas/bin directory by running the following lines of code:
+The template for the submission config file can be found in `bin/default_config_files` within the repo. This is where you can edit the various parameters you want to include in your submission. Read more at the [SeqSender](https://cdcgov.github.io/seqsender/#id_3-config-file-creation) docs.
+You can find more information on how to setup your own submission config and additional information on fields in the following guide: [Submission Config Guide](https://github.com/CDCgov/tostadas/blob/b904111d78262efb82589bdd72b0482f27770f87/docs/submission_config_guide.md).
+❗ Pre-requisite to submit to GenBank: Copy the program [table2asn](https://www.ncbi.nlm.nih.gov/genbank/table2asn/) to you tostadas/bin directory by running the following lines of code:
 
 * `cd ./tostadas/bin/`
 * `wget https://ftp.ncbi.nlm.nih.gov/asn1-converters/by_program/table2asn/linux64.table2asn.gz`

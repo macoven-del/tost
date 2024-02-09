@@ -5,12 +5,12 @@ The following section walks through the outputs from the pipeline.
 ## 6.1 Pipeline Overview:
 The workflow will generate outputs in the following order:
 
-Validation
-Responsible for QC of metadata
+* Validation
+* Responsible for QC of metadata
 Aligns sample metadata .xlsx to sample .fasta
 Formats metadata into .tsv format
-Annotation
-Extracts features from .gff
+*Annotation
+* Extracts features from .gff
 Aligns features
 Annotates sample genomes outputting .gff
 Submission
