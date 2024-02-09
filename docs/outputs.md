@@ -1,8 +1,8 @@
-Outputs
-RamiyapriyaS edited this page 5 hours ago · 3 revisions
+# Outputs
+
 The following section walks through the outputs from the pipeline.
 
-6.1 Pipeline Overview:
+## 6.1 Pipeline Overview:
 The workflow will generate outputs in the following order:
 
 Validation
@@ -15,8 +15,10 @@ Aligns features
 Annotates sample genomes outputting .gff
 Submission
 Formats for database submission
-This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint only_update_submission can be run as many times as necessary until all files are fully uploaded.
-6.2 Output Directory Formatting:
+
+This section runs twice, with the second run occuring after a wait time to allow for all samples to be uploaded to NCBI. Entrypoint `only_update_submission` can be run as many times as necessary until all files are fully uploaded.
+
+## 6.2 Output Directory Formatting:
 The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:
 
 validation_outputs (name configurable with val_output_dir)
@@ -49,7 +51,8 @@ genbank
 accessions.csv
 terminal_outputs
 commands_used
-6.3 Understanding Pipeline Outputs:
+
+## 6.3 Understanding Pipeline Outputs:
 The pipeline outputs include:
 
 metadata.tsv files for each sample
