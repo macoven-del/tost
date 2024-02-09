@@ -3,7 +3,11 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - Install: installation.md
+  - Installation: installation.md
   - Quick Start: quickstart.md
+  - Profile Options and Input Files: profile.md
+  - Parameters: parameters.md
+  - Outputs: outputs.md
+  - Submission Guide: submission.md
   - Helpful Links: links.md
   - Get in Touch: getintouch.md
