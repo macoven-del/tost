@@ -320,21 +320,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nextflow-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nextflow Install
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Nextflow Install">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#7-ensure-nextflow-was-installed-successfully-by-running-nextflow-v" class="md-nav__link">
     <span class="md-ellipsis">
@@ -620,21 +605,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nextflow-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nextflow Install
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Nextflow Install">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#7-ensure-nextflow-was-installed-successfully-by-running-nextflow-v" class="md-nav__link">
     <span class="md-ellipsis">
@@ -699,7 +669,7 @@
 
 <h1 id="installation">Installation</h1>
 <h2 id="environment-setup">Environment Setup</h2>
-<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on Page X - CDC User Guide</p>
+<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on Page X - <a href="https://github.com/CDCgov/tostadas/wiki/">CDC User Guide</a></p>
 <h3 id="1-clone-the-repository-to-your-local-machine">(1) Clone the repository to your local machine:</h3>
 <ul>
 <li><code>git clone https://github.com/CDCgov/tostadas.git</code>
@@ -737,9 +707,8 @@ Verify which environment is active by running the following conda command: * <co
 <h3 id="6-install-nextflow-using-use-mamba-and-the-bioconda-channel">(6) Install Nextflow using Use Mamba and the Bioconda Channel:</h3>
 <ul>
 <li><code>mamba install -c bioconda nextflow</code>
-❗ Optionally, you may install nextflow without mamba by following the instructions found in the Nextflow Installation Documentaion Page: </li>
+❗ Optionally, you may install nextflow without mamba by following the instructions found in the Nextflow Installation Documentation Page: <a href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow Install</a></li>
 </ul>
-<h2 id="nextflow-install">Nextflow Install</h2>
 <h3 id="7-ensure-nextflow-was-installed-successfully-by-running-nextflow-v">(7) Ensure Nextflow was installed successfully by running nextflow -v</h3>
 <p>Expected Output:</p>
 <ul>
@@ -754,7 +723,7 @@ The exact version of Nextflow returned will differ from installation to installa
 <h4 id="for-bacterial-reads">For Bacterial Reads</h4>
 <ul>
 <li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --bacteria</code> 
-The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your nextflow run command.</li>
+The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</li>
 </ul>
 
 
