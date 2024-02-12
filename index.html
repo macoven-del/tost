@@ -250,6 +250,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Pipeline Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -263,27 +278,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#repeatmasker-and-liftoff" class="md-nav__link">
+  <a href="#1-repeatmasker-and-liftoff" class="md-nav__link">
     <span class="md-ellipsis">
-      RepeatMasker and Liftoff
+      1. RepeatMasker and Liftoff
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vadr" class="md-nav__link">
+  <a href="#2-vadr" class="md-nav__link">
     <span class="md-ellipsis">
-      VADR
+      2. VADR
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bakta" class="md-nav__link">
+  <a href="#3-bakta" class="md-nav__link">
     <span class="md-ellipsis">
-      Bakta
+      3. Bakta
     </span>
   </a>
   
@@ -513,6 +528,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Pipeline Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -526,27 +556,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#repeatmasker-and-liftoff" class="md-nav__link">
+  <a href="#1-repeatmasker-and-liftoff" class="md-nav__link">
     <span class="md-ellipsis">
-      RepeatMasker and Liftoff
+      1. RepeatMasker and Liftoff
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vadr" class="md-nav__link">
+  <a href="#2-vadr" class="md-nav__link">
     <span class="md-ellipsis">
-      VADR
+      2. VADR
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bakta" class="md-nav__link">
+  <a href="#3-bakta" class="md-nav__link">
     <span class="md-ellipsis">
-      Bakta
+      3. Bakta
     </span>
   </a>
   
@@ -592,24 +622,30 @@ TOSTADAS is flexible, allowing you to choose which portions of the pipeline to r
 </ul>
 <p>The current distribution has been tested with Pox virus sequences as well as some bacteria. Ongoing development aims to make the pipeline pathogen agnostic.</p>
 <h2 id="pipeline-summary">Pipeline Summary</h2>
-<p>Metadata Validation
-The validation workflow checks that user provided metadata conforms to NCBI standards and matches the input data file(s). To allow for easy multi-sample submission, TOSTADAS can split a multi-sample Excel (.xlsx) file into separate tab delimited files (.tsv) for each individual sample.</p>
+<h3 id="metadata-validation">Metadata Validation</h3>
+<p>The validation workflow checks that user provided metadata conforms to NCBI standards and matches the input data file(s). To allow for easy multi-sample submission, TOSTADAS can split a multi-sample Excel (.xlsx) file into separate tab delimited files (.tsv) for each individual sample.</p>
 <p>TOSTADAS can accept custom metadata fields specific to a users' pathogen, sample type, or workflow. Additionally, TOSTADAS offers powerful validation tools for user- created fields, allowing users to specify which samples to apply rules to, replace empty values with user specified replacements, rename existing fields and other operations. These features can be enabled with the <code>validate_custom_fields</code> parameter. Custom fields can be specified using the <code>custom_fields_file</code> parameter.</p>
 <p>A full guide to using custom metadata fields can be found here: <a href="https://github.com/CDCgov/tostadas/blob/457242fb15973f69cb3578367317a8b5e7c619f7/docs/custom_metadata_guide.md">Custom Metadata Guide</a></p>
 <h2 id="gene-annotation">Gene Annotation</h2>
 <p>TOSTADAS offers three optional annotation options:</p>
-<h3 id="repeatmasker-and-liftoff">RepeatMasker and Liftoff</h3>
-<p>The RepeatMasker and Liftoff workflow annotates fasta-formatted sequences based upon a provided reference and annotation file. This workflow was optimized for variola genome annotation and may require modification for other pathogens. This workflow runs <a href="https://www.repeatmasker.org/">RepeatMasker</a> to annotate repeat motifs, followed by <a href="https://github.com/agshumate/Liftoff">Liftoff</a> to annotate functional regions. These results are combined into a single feature file (.gff3). The Liftoff annotation workflow requires a reference genome (.fasta), reference feature .gff, single sample .fasta files, and metadata in Excel .xlsx format. Be sure to specify the correct database in the params for this option.
-[RepeatMasker and Liftoff Example] (Link)</p>
-<h3 id="vadr">VADR</h3>
-<p>The VADR workflow annotates fasta-formatted viral genomes using RefSeq annotation from a set of homologous reference models. This workflow requires single sample fasta files, metadata in .xlsx format, and reference information for the pathogen genome. TOSTADAS comes packaged with support for [monkeypox (mpxv) annotation] (https://github.com/CDCgov/tostadas/tree/master/vadr_files/mpxv-models). You can find information on other supported pathogens at the [VADR GitHub Repository] (https://github.com/ncbi/vadr).
-[VADR Example] (Link)</p>
-<h3 id="bakta">Bakta</h3>
-<p>The Bakta workflow annotates fasta-formatted bacterial genomes &amp; plasmids using the Bakta software. This workflow requires single sample .fasta files, metadata in .xlsx format, and optional reference database for annotation (found here).
-[BAKTA Example] (Link)</p>
+<h3 id="1-repeatmasker-and-liftoff">1. RepeatMasker and Liftoff</h3>
+<ul>
+<li>The RepeatMasker and Liftoff workflow annotates fasta-formatted sequences based upon a provided reference and annotation file. This workflow was optimized for variola genome annotation and may require modification for other pathogens. This workflow runs <a href="https://www.repeatmasker.org/">RepeatMasker</a> to annotate repeat motifs, followed by <a href="https://github.com/agshumate/Liftoff">Liftoff</a> to annotate functional regions. These results are combined into a single feature file (.gff3). The Liftoff annotation workflow requires a reference genome (.fasta), reference feature .gff, single sample .fasta files, and metadata in Excel .xlsx format. Be sure to specify the correct database in the params for this option.
+[RepeatMasker and Liftoff Example] (Link)</li>
+</ul>
+<h3 id="2-vadr">2. VADR</h3>
+<ul>
+<li>The VADR workflow annotates fasta-formatted viral genomes using RefSeq annotation from a set of homologous reference models. This workflow requires single sample fasta files, metadata in .xlsx format, and reference information for the pathogen genome. TOSTADAS comes packaged with support for [monkeypox (mpxv) annotation] (https://github.com/CDCgov/tostadas/tree/master/vadr_files/mpxv-models). You can find information on other supported pathogens at the [VADR GitHub Repository] (https://github.com/ncbi/vadr).
+[VADR Example] (Link)</li>
+</ul>
+<h3 id="3-bakta">3. Bakta</h3>
+<ul>
+<li>The Bakta workflow annotates fasta-formatted bacterial genomes &amp; plasmids using the <a href="https://github.com/CDCgov/tostadas/tree/master#gene-annotation">Bakta</a> software. This workflow requires single sample .fasta files, metadata in .xlsx format, and optional reference database for annotation (found <a href="https://zenodo.org/records/7669534">here</a>).
+[BAKTA Example] (Link)</li>
+</ul>
 <p>All annotation workflows produce a general feature format file (.gff3) and NCBI feature table (tbl) compatible with NCBI submission requirements.</p>
 <h2 id="submission">Submission</h2>
-<p>The TOSTADAS Submission workflow generates the necessary files for Genbank submission, a BioSample ID, then optionally uploads Fastq files via FTP to SRA. This workflow was adapted from SeqSender public database submission pipeline.</p>
+<p>The TOSTADAS Submission workflow generates the necessary files for Genbank submission, a BioSample ID, then optionally uploads Fastq files via FTP to SRA. This workflow was adapted from <a href="https://github.com/CDCgov/seqsender">SeqSender</a> public database submission pipeline.</p>
 
 
 
