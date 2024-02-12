@@ -2,7 +2,7 @@
 
 Default parameters are given in the nextflow.config file. This table lists the parameters that can be changed to a value, path or true/false. When changing these parameters pay attention to the required inputs and make sure that paths line-up and values are within range. To change a parameter you may change with a flag after the nextflow command or change them within your standard_params.config or standard.yaml file.
 
-Please note the correct formatting and the default calculation of submission_wait_time at the bottom of the params table.
+ * Please note the correct formatting and the default calculation of submission_wait_time at the bottom of the params table.
 ## 7.1 Input Files
 
 

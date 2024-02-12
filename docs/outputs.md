@@ -20,34 +20,34 @@ The workflow will generate outputs in the following order:
 ## 6.2 Output Directory Formatting:
 The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:
 
-* validation_outputs (name configurable with val_output_dir)
+* validation_outputs (name configurable with `val_output_dir`)
  * name of metadata sample file
  * errors
  * fasta
  * tsv_per_sample
-* liftoff_outputs (name configurable with final_liftoff_output_dir)
+* liftoff_outputs (name configurable with `final_liftoff_output_dir`)
  * name of metadata sample file
  * errors
  * fasta
  * liftoff
  * tbl
-* vadr_outputs (name configurable with vadr_output_dir)
+* vadr_outputs (name configurable with `vadr_output_dir`)
  * name of metadata sample file
  * errors
  * fasta
  * gffs
  * tbl
-* bakta_outputs (name configurable with bakta_output_dir)
+* bakta_outputs (name configurable with `bakta_output_dir`)
  * name of metadata sample file
  * fasta
  * gff
  * tbl
-* submission_outputs (name and path configurable with submission_output_dir)
+* submission_outputs (name and path configurable with `submission_output_dir`)
  * name of annotation results (Liftoff or VADR, etc.)
  * individual_sample_batch_info
- * biosample_sra
- * genbank
- * accessions.csv
+  * biosample_sra
+  * genbank
+  * accessions.csv
  * terminal_outputs
  * commands_used
 
@@ -59,5 +59,5 @@ The pipeline outputs include:
 * separate gff files for each sample
 * separate tbl files containing feature information for each sample
 * submission log file
-This output is found in the `submission_outputs` file in your specified `output_directory`.
-If the file can not be found you can run the `only_update_submission` entrypoint for the pipeline.
+ * This output is found in the `submission_outputs` file in your specified `output_directory`.
+ * If the file can not be found you can run the `only_update_submission` entrypoint for the pipeline.
