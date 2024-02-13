@@ -148,6 +148,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/macoven-del/tost/tree/gh-pages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -181,6 +193,18 @@
     </a>
     TOSTADAS
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/macoven-del/tost/tree/gh-pages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -498,6 +522,9 @@
                 
                   
 
+  
+  
+
 
 <h1 id="outputs">Outputs</h1>
 <p>The following section walks through the outputs from the pipeline.</p>
@@ -519,29 +546,29 @@
 <h2 id="62-output-directory-formatting">6.2 Output Directory Formatting:</h2>
 <p>The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:</p>
 <ul>
-<li>validation_outputs (name configurable with val_output_dir)</li>
+<li>validation_outputs (name configurable with <code>val_output_dir</code>)</li>
 <li>name of metadata sample file</li>
 <li>errors</li>
 <li>fasta</li>
 <li>tsv_per_sample</li>
-<li>liftoff_outputs (name configurable with final_liftoff_output_dir)</li>
+<li>liftoff_outputs (name configurable with <code>final_liftoff_output_dir</code>)</li>
 <li>name of metadata sample file</li>
 <li>errors</li>
 <li>fasta</li>
 <li>liftoff</li>
 <li>tbl</li>
-<li>vadr_outputs (name configurable with vadr_output_dir)</li>
+<li>vadr_outputs (name configurable with <code>vadr_output_dir</code>)</li>
 <li>name of metadata sample file</li>
 <li>errors</li>
 <li>fasta</li>
 <li>gffs</li>
 <li>tbl</li>
-<li>bakta_outputs (name configurable with bakta_output_dir)</li>
+<li>bakta_outputs (name configurable with <code>bakta_output_dir</code>)</li>
 <li>name of metadata sample file</li>
 <li>fasta</li>
 <li>gff</li>
 <li>tbl</li>
-<li>submission_outputs (name and path configurable with submission_output_dir)</li>
+<li>submission_outputs (name and path configurable with <code>submission_output_dir</code>)</li>
 <li>name of annotation results (Liftoff or VADR, etc.)</li>
 <li>individual_sample_batch_info</li>
 <li>biosample_sra</li>
@@ -557,9 +584,9 @@
 <li>separate fasta files for each sample</li>
 <li>separate gff files for each sample</li>
 <li>separate tbl files containing feature information for each sample</li>
-<li>submission log file
-This output is found in the <code>submission_outputs</code> file in your specified <code>output_directory</code>.
-If the file can not be found you can run the <code>only_update_submission</code> entrypoint for the pipeline.</li>
+<li>submission log file</li>
+<li>This output is found in the <code>submission_outputs</code> file in your specified <code>output_directory</code>.</li>
+<li>If the file can not be found you can run the <code>only_update_submission</code> entrypoint for the pipeline.</li>
 </ul>
 
 
