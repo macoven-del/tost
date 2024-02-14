@@ -90,4 +90,4 @@ Notes: you can only submit raw files to SRA, not to Genbank.
 
 * `nextflow run main.nf -profile <test,standard>,<singularity,docker> --<virus,bacteria> --annotation false --sra --submission_wait_time 5`
 - `--annotation`:
-The boolean option `false` is specified for the annotation parameter
+ - The boolean option `false` is specified for the annotation parameter.
