@@ -1,7 +1,7 @@
 # Installation
 
 ## Environment Setup
-❗ Note: If you are a CDC user, please follow the set-up instructions found on Page X - [CDC User Guide](https://github.com/CDCgov/tostadas/wiki/)
+❗ Note: If you are a CDC user, please follow the set-up instructions found on [CDC User Guide](https://github.com/CDCgov/tostadas/wiki/)
 
 ### (1) Clone the repository to your local machine:
 * `git clone https://github.com/CDCgov/tostadas.git`
@@ -17,30 +17,32 @@ If you want to create the full-conda environment needed to run the pipeline outs
 
 If you want to run the pipeline using nextflow only (this will be most users), proceed with step 4b. Nextflow will handle environment creation and you would only need to install the nextflow package locally vs the entire environment.
 
-       (4a) Create the conda environment and install the dependencies set in your environment.yml:
+#### (4a) Create the conda environment and install the dependencies set in your `environment.yml`:
 
 * `cd tostadas`
 * `mamba env create -n tostadas -f environment.yml`   
-       (4b) Create an empty conda environment:
+
+#### (4b) Create an empty conda environment:
 
 * `conda create --name tostadas`
+This conda environment will be used to install Nextflow.
 ### (5) Activate the environment.
 * `conda activate tostadas`
-Verify which environment is active by running the following conda command: * `conda env list` . The active environment will be denoted with an asterisk *
+Verify which environment is active by running the following conda command: `conda env list`. The active environment will be denoted with an asterisk `*`
 
 ### (6) Install Nextflow using Use Mamba and the Bioconda Channel:
 * `mamba install -c bioconda nextflow`
 ❗ Optionally, you may install nextflow without mamba by following the instructions found in the Nextflow Installation Documentation Page: [Nextflow Install](https://www.nextflow.io/docs/latest/getstarted.html)
 
-### (7) Ensure Nextflow was installed successfully by running nextflow -v
+### (7) Ensure Nextflow was installed successfully by running `nextflow -v`
 Expected Output:
 
 * `nextflow version <CURRENT VERSION>`
 The exact version of Nextflow returned will differ from installation to installation. It is important that the command execute successfully, and a version number is returned.
 
 ### (8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
-#### For Virus Reads
+* `# for virus reads`
 * `nextflow run main.nf -profile test,<singularity/docker/conda> --virus`
-#### For Bacterial Reads
+* `# for bacterial Reads`
 * `nextflow run main.nf -profile test,<singularity/docker/conda> --bacteria` 
-The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the `--output_dir` flag in your `nextflow run` command.
+The outputs of the pipeline will appear in the `test_output` folder within the project directory. You can specify an output directory in the config file or by supplying a path to the `--output_dir` flag in your `nextflow run` command.

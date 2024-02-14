@@ -12,7 +12,7 @@ Once the appropriate template has been selected, you must fill/answer all fields
 ### (3) Submit the Issue
 Once all information has been provided, you may now submit it!
 
-Please allow for some turnaround time for us to review the issue and potentially start addressing it. If this is an urgent request and have not heard from us nor see any progress being made after quite some time (longer than a week), feel free to start a discussion (found here: Start New Discussion) mentioning the following:
+Please allow for some turnaround time for us to review the issue and potentially start addressing it. If this is an urgent request and have not heard from us nor see any progress being made after quite some time (longer than a week), feel free to start a discussion (found here: [Start New Discussion](https://github.com/CDCgov/tostadas/discussions)) mentioning the following:
 
 * Issue Number
 * Date Submitted
