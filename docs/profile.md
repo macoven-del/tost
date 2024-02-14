@@ -65,7 +65,7 @@ The submission component of the pipeline is adapted from [SeqSender](https://git
 
 - NCBI: If uploading to NCBI archives such as BioSample/SRA/Genbank, you must complete the following steps:
 
- - Create a center account: Contact the following e-mail for account creation: [](sra@ncbi.nlm.nih.gov)  and provide the following information:
+ - Create a center account: Contact the following e-mail for account creation: [](mailto:sra@ncbi.nlm.nih.gov)  and provide the following information:
  - Suggested center abbreviation (16 char max)
  - Center name (full), center URL & mailing address (including country and postcode)
  - Phone number (main phone for center or lab)
