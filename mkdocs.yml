@@ -6,7 +6,6 @@ theme:
     repo: fontawesome/brands/git-alt
   font:
     text: Roboto
-    size: 90px
 nav:
   - Home: index.md
   - Installation: installation.md
