@@ -1,11 +1,12 @@
 site_name: TOSTADAS
-repo_url: https://github.com/macoven-del/tost/tree/gh-pages
+repo_url: https://github.com/CDCgov/tostadas/tree/github-pages
 theme:
   name: material
   icon:
     repo: fontawesome/brands/git-alt
   font:
     text: Roboto
+    size: 90px
 nav:
   - Home: index.md
   - Installation: installation.md
