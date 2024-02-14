@@ -324,6 +324,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="(4) Create the conda environment:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-create-the-conda-environment-and-install-the-dependencies-set-in-your-environmentyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4a) Create the conda environment and install the dependencies set in your environment.yml:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-create-an-empty-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4b) Create an empty conda environment:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -359,30 +383,6 @@
       (8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="(8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-virus-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Virus Reads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-bacterial-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Bacterial Reads
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -649,6 +649,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="(4) Create the conda environment:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-create-the-conda-environment-and-install-the-dependencies-set-in-your-environmentyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4a) Create the conda environment and install the dependencies set in your environment.yml:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-create-an-empty-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4b) Create an empty conda environment:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -685,30 +709,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="(8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-virus-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Virus Reads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-bacterial-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Bacterial Reads
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -736,7 +736,7 @@
 
 <h1 id="installation">Installation</h1>
 <h2 id="environment-setup">Environment Setup</h2>
-<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on Page X - <a href="https://github.com/CDCgov/tostadas/wiki/">CDC User Guide</a></p>
+<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on <a href="https://github.com/CDCgov/tostadas/wiki/">CDC User Guide</a></p>
 <h3 id="1-clone-the-repository-to-your-local-machine">(1) Clone the repository to your local machine:</h3>
 <ul>
 <li><code>git clone https://github.com/CDCgov/tostadas.git</code>
@@ -754,43 +754,39 @@
 <h3 id="4-create-the-conda-environment">(4) Create the conda environment:</h3>
 <p>If you want to create the full-conda environment needed to run the pipeline outside of Nextflow (this enables you to run individual python scripts), then proceed with step 4a.</p>
 <p>If you want to run the pipeline using nextflow only (this will be most users), proceed with step 4b. Nextflow will handle environment creation and you would only need to install the nextflow package locally vs the entire environment.</p>
-<pre><code>   (4a) Create the conda environment and install the dependencies set in your environment.yml:
-</code></pre>
+<h4 id="4a-create-the-conda-environment-and-install-the-dependencies-set-in-your-environmentyml">(4a) Create the conda environment and install the dependencies set in your <code>environment.yml</code>:</h4>
 <ul>
 <li><code>cd tostadas</code></li>
-<li>
-<p><code>mamba env create -n tostadas -f environment.yml</code> <br />
-       (4b) Create an empty conda environment:</p>
-</li>
-<li>
-<p><code>conda create --name tostadas</code></p>
-</li>
+<li><code>mamba env create -n tostadas -f environment.yml</code>   </li>
+</ul>
+<h4 id="4b-create-an-empty-conda-environment">(4b) Create an empty conda environment:</h4>
+<ul>
+<li><code>conda create --name tostadas</code>
+This conda environment will be used to install Nextflow.</li>
 </ul>
 <h3 id="5-activate-the-environment">(5) Activate the environment.</h3>
 <ul>
 <li><code>conda activate tostadas</code>
-Verify which environment is active by running the following conda command: * <code>conda env list</code> . The active environment will be denoted with an asterisk *</li>
+Verify which environment is active by running the following conda command: <code>conda env list</code>. The active environment will be denoted with an asterisk <code>*</code></li>
 </ul>
 <h3 id="6-install-nextflow-using-use-mamba-and-the-bioconda-channel">(6) Install Nextflow using Use Mamba and the Bioconda Channel:</h3>
 <ul>
 <li><code>mamba install -c bioconda nextflow</code>
 ❗ Optionally, you may install nextflow without mamba by following the instructions found in the Nextflow Installation Documentation Page: <a href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow Install</a></li>
 </ul>
-<h3 id="7-ensure-nextflow-was-installed-successfully-by-running-nextflow-v">(7) Ensure Nextflow was installed successfully by running nextflow -v</h3>
+<h3 id="7-ensure-nextflow-was-installed-successfully-by-running-nextflow-v">(7) Ensure Nextflow was installed successfully by running <code>nextflow -v</code></h3>
 <p>Expected Output:</p>
 <ul>
 <li><code>nextflow version &lt;CURRENT VERSION&gt;</code>
 The exact version of Nextflow returned will differ from installation to installation. It is important that the command execute successfully, and a version number is returned.</li>
 </ul>
 <h3 id="8-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment">(8) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:</h3>
-<h4 id="for-virus-reads">For Virus Reads</h4>
 <ul>
+<li><code># for virus reads</code></li>
 <li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --virus</code></li>
-</ul>
-<h4 id="for-bacterial-reads">For Bacterial Reads</h4>
-<ul>
+<li><code># for bacterial Reads</code></li>
 <li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --bacteria</code> 
-The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</li>
+The outputs of the pipeline will appear in the <code>test_output</code> folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</li>
 </ul>
 
 
