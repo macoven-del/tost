@@ -21,8 +21,12 @@ This section walks through the available parameters to customize your workflow.
 |metadata|	|.xlsx	|Multi-sample metadata matching metadata spreadsheets provided in input_files|
 |submission_config	|.yaml	|configuration file for submitting to NCBI, sample versions can be found in repo|
 
+❗ This pipeline has been tested with paired-end sequence data.
+
+Example metadata [file](https://github.com/CDCgov/tostadas/blob/bb47dce749eada90f3c879a3e373a2e27c36eca4/assets/sample_metadata/MPXV_metadata_Sample_Run_1.xlsx)
+
 ## Customizing Parameters:
-Parameters can be customized from the command line or by modifying one of the following configuration files: `standard.json`, `standard.yml` or `nextflow.config`.
+Parameters can be customized from the command line or by modifying one of the following configuration files: standard.json, standard.yml or nextflow.config.
 
 ### 1. Customizing parameters from the command line:
 Parameters can be overridden during runtime by providing various flags to the `nextflow` command.
@@ -31,9 +35,9 @@ Example: Modifying the path of the output directory
 
 `nextflow run main.nf -profile test,singularity --virus --output_dir /path/to/output/dir`
 
-Certain parameters such as `-profile` and pathogen type `(--virus)` are required, while others like `--output_dir` can be specified optionally. The complete list of parameters and the types of input that they require can be found in the Parameters page.
+Certain parameters such as `-profile` and pathogen type (`--virus`) are required, while others like `--output_dir` can be specified optionally. The complete list of parameters and the types of input that they require can be found in the [Parameters]() page.
 
-### 2. Customizing parameters by modifying the `standard.json` or `standard.yml` files:
+### 2. Customizing parameters by modifying the standard.json or standard.yml files:
 Default parameters can be overridden by making changes to either the `standard.yml` or `standard.json` files located in the `./params` directory. To modify the run with the updated parameters, use the `-params-file` runtime parameter and specify which file contains the updated parameters.
 
 Example:
@@ -61,7 +65,7 @@ You will want to define whether to run the full pipeline with submission or with
 ### Submission Pre-requisites:
 The submission component of the pipeline is adapted from [SeqSender](https://github.com/CDCgov/seqsender) public database submission pipeline. It has been developed to allow the user to create a config file to select which databases they would like to upload to and allows for any possible metadata fields by using a YAML to pair the database's metadata fields with your personal metadata field columns. The requirements for this portion of the pipeline to run are listed below.
 
-#### (A) Create Appropriate Accounts as needed for the SeqSender public database submission pipeline integrated into TOSTADAS:
+#### (A) Create Appropriate Accounts as needed for the [SeqSender](https://github.com/CDCgov/seqsender) public database submission pipeline integrated into TOSTADAS:
 
 - NCBI: If uploading to NCBI archives such as BioSample/SRA/Genbank, you must complete the following steps:
 
@@ -73,7 +77,7 @@ The submission component of the pipeline is adapted from [SeqSender](https://git
  - Contact email (ideally a service account monitored by several people)
  - Whether you intend to submit via FTP or command line Aspera (ascp)
  - Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.
-- GISAID: A GISAID account is required for submission to GISAID, you can register for an account at [](https://www.gisaid.org/). Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at hcov-19@gisaid.org to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.
+- GISAID: A GISAID account is required for submission to GISAID, you can register for an account at [GISAID](https://www.gisaid.org/). Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at hcov-19@gisaid.org to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.
 
 #### (B) Config File Set-up:
 
