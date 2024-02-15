@@ -364,7 +364,7 @@
           <li class="md-nav__item">
   <a href="#example-modifying-the-submission-wait-time" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Modifying the Submission Wait Time
+      Example: Modifying the submission wait time
     </span>
   </a>
   
@@ -377,8 +377,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Use Case 1: Running Annotation and Submission">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#1-annotate-viral-assemblies-and-submit-to-genbank-and-sra" class="md-nav__link">
@@ -398,32 +397,12 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#use-case-2-running-submission-only-without-annotation-raw-files" class="md-nav__link">
+  <a href="#use-case-2-running-submission-only-without-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Case 2: Running Submission only without Annotation (Raw Files)
+      Use Case 2: Running Submission only without Annotation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Use Case 2: Running Submission only without Annotation (Raw Files)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-submit-fastqs-to-sra-required-files-fastq-files-metadata-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Submit fastqs to SRA Required files: .fastq files, metadata file
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -690,7 +669,7 @@
           <li class="md-nav__item">
   <a href="#example-modifying-the-submission-wait-time" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Modifying the Submission Wait Time
+      Example: Modifying the submission wait time
     </span>
   </a>
   
@@ -703,8 +682,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Use Case 1: Running Annotation and Submission">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#1-annotate-viral-assemblies-and-submit-to-genbank-and-sra" class="md-nav__link">
@@ -724,32 +702,12 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#use-case-2-running-submission-only-without-annotation-raw-files" class="md-nav__link">
+  <a href="#use-case-2-running-submission-only-without-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Case 2: Running Submission only without Annotation (Raw Files)
+      Use Case 2: Running Submission only without Annotation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Use Case 2: Running Submission only without Annotation (Raw Files)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-submit-fastqs-to-sra-required-files-fastq-files-metadata-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Submit fastqs to SRA Required files: .fastq files, metadata file
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -779,46 +737,44 @@
 <h1 id="quick-start">Quick Start</h1>
 <h2 id="validate-environment">Validate Environment</h2>
 <h3 id="1-check-that-you-are-in-the-directory-where-the-tostadas-repository-was-installed-by-running-pwd">(1) Check that you are in the directory where the TOSTADAS repository was installed by running <code>pwd</code></h3>
-<p>Expected Output:</p>
-<ul>
-<li><code>/path/to/working/directory/tostadas</code>
-This is the default directory set in <code>nextflow.config</code> for the provided test input files.</li>
-</ul>
-<h3 id="2-change-the-submission_config-parameter-within-nextflowconfig-if-running-with-your-own-data-to-the-location-of-your-personal-submission-config-file-note-that-we-provide-a-virus-and-bacterial-test-config-depending-on-the-use-case">(2) Change the submission_config parameter within nextflow.config (if running with your own data) to the location of your personal submission config file. Note that we provide a virus and bacterial test config depending on the use case.</h3>
-<p>❗ You must have your personal submission configuration file set up before running the default parameters for the pipeline and/or if you plan on using sample submission at all. More information on running the submission sub-workflow can be found here: More Information on Submission</p>
+<p>Expected Output:
+* <code>/path/to/working/directory/tostadas</code>
+This is the default directory set in <code>nextflow.config</code> for the provided test input files.</p>
+<h3 id="2-change-the-submission_config-parameter-within-nextflowconfig-if-running-with-your-own-data-to-the-location-of-your-personal-submission-config-file-note-that-we-provide-a-virus-and-bacterial-test-config-depending-on-the-use-case">(2) Change the <code>submission_config</code> parameter within <code>nextflow.config</code> (if running with your own data) to the location of your personal submission config file. Note that we provide a virus and bacterial test config depending on the use case.</h3>
+<p>❗ You must have your personal submission configuration file set up before running the default parameters for the pipeline and/or if you plan on using sample submission at all. More information on running the submission sub-workflow can be found here: <a href="">More Information on Submission</a></p>
 <h2 id="pipeline-execution-examples">Pipeline Execution Examples</h2>
 <p>We describe a few use-cases of the pipeline below. For more information on input parameters, refer to the documentation found in the following pages:</p>
 <ul>
-<li>[Profile Options and Input Files]</li>
-<li>[Parameters]
-❗ Note: For all use cases, the paths to the required files should be specified in the <code>nextflow.config</code> file or the <code>params.yaml</code> file.</li>
+<li><a href="">Profile Options and Input Files</a></li>
+<li><a href="">Parameters</a>
+❗ Note: For all use cases, the paths to the <em>required files</em> should be specified in the <code>nextflow.config</code> file or the <code>params.yaml</code> file.</li>
 </ul>
 <h3 id="basic-usage">Basic Usage:</h3>
-<p>Before we dive into the more complex use-cases of the pipeline, let's look at the most basic way the pipeline can be run:</p>
+<p>Before we dive into the more complex use cases of the pipeline, let's look at the most basic way the pipeline can be run:</p>
 <ul>
 <li><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus</code></li>
 <li><code>-profile</code>:</li>
-<li>This parameter is required to specify the run-time environment (<code>singularity</code>, <code>docker</code> or <code>conda</code>). Conda implementation is less stable, <code>singularity</code> or <code>docker</code> is recommended.</li>
+<li>This parameter is required to specify the run-time environment (singularity, docker or conda). Conda implementation is less stable, singularity or docker is recommended.</li>
 <li>
-<p>Optionally, you may specify <code>test</code> as an additional argument to this parameter. If <code>test</code> is not provided as an option, the pipeline will run using the configurations found in the <code>nextflow.confi</code>g file.
+<p>Optionally, you may specify test as an additional argument to this parameter. If test is not provided as an option, the pipeline will run using the configurations found in the nextflow.config file.
 Example:</p>
 </li>
 <li>
 <p><code>nextflow run main.nf -profile singularity,test --virus</code></p>
 </li>
-<li><code>--virus</code>:
-The pathogen type must be specified in order for the pipeline to run. Here <code>virus</code> is specified.</li>
+<li>--virus:</li>
+<li>The pathogen type must be specified in order for the pipeline to run. Here virus is specified.</li>
 </ul>
 <h3 id="providing-additional-parameters-through-the-command-line">Providing additional parameters through the command line:</h3>
 <p>Parameters can be overridden during runtime by providing various flags to the nextflow command.</p>
-<h3 id="example-modifying-the-submission-wait-time">Example: Modifying the Submission Wait Time</h3>
-<p>By default, the default parameters will trigger a wait time equal to # of samples * 180 seconds. This default can be overridden by running the following command instead:</p>
+<h3 id="example-modifying-the-submission-wait-time">Example: Modifying the submission wait time</h3>
+<p>By default, the default parameters will trigger a wait time equal to number of samples, times 180 seconds. This default can be overridden by running the following command instead:</p>
 <ul>
-<li><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus --submission_wait_time &lt;integer value&gt;</code></li>
+<li><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus --submission_wait_time &lt;integer value&gt;</code> </li>
 </ul>
 <h3 id="use-case-1-running-annotation-and-submission">Use Case 1: Running Annotation and Submission</h3>
-<h4 id="1-annotate-viral-assemblies-and-submit-to-genbank-and-sra">1. Annotate viral assemblies and submit to GenBank and SRA</h4>
-<p>Required files: .fasta files, metadata file</p>
+<h3 id="1-annotate-viral-assemblies-and-submit-to-genbank-and-sra">1. Annotate viral assemblies and submit to GenBank and SRA</h3>
+<p>Required files: fasta files, metadata file</p>
 <ul>
 <li>
 <p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus --genbank --sra --submission_wait_time 5</code>
@@ -829,15 +785,15 @@ Breakdown:</p>
 </li>
 <li>Compute environment is specified</li>
 <li><code>--virus</code>:</li>
-<li>Pathogen type is specified as virus</li>
-<li><code>--sra</code>:</li>
-<li><code>sra</code> is specified as the database to submit to</li>
+<li>Pathogen type is specified as <code>virus</code>
+<code>--sra</code>:</li>
+<li><code>sra</code> is specified as the database for submission</li>
 <li><code>--genbank</code>:</li>
-<li><code>genbank</code> is specified as the database to submit to</li>
+<li><code>genbank</code> is specified as the database for submission</li>
 <li><code>--submission_wait_time</code>:</li>
 <li>
-<p>The <code>submission_wait_time</code> paramter is modified
-❗ Pre-requisite to submit to GenBank: In order to submit to GenBank, the program <code>table2asn</code> must be executable in your local environment. Copy the program <a href="https://ftp.ncbi.nlm.nih.gov/asn1-converters/by_program/table2asn/">table2asn</a> to your <code>tostadas/bin</code> directory by running the following lines of code:</p>
+<p>The <code>submission_wait_time</code> parameter is modified
+❗ <strong>Pre-requisite to submit to GenBank</strong>: In order to submit to GenBank, the program <code>table2asn</code> must be executable in your local environment. Copy <a href="https://www.ncbi.nlm.nih.gov/genbank/table2asn/">table2asn</a> to your <code>tostadas/bin</code> directory by running the following lines of code:</p>
 </li>
 <li>
 <p><code>cd ./tostadas/bin/</code></p>
@@ -846,36 +802,36 @@ Breakdown:</p>
 <li><code>gunzip linux64.table2asn.gz</code></li>
 <li><code>mv linux64.table2asn table2asn</code></li>
 </ul>
-<h4 id="2-annotate-bacterial-assemblies-and-submit-to-genbank-and-sra">2. Annotate bacterial assemblies and submit to GenBank and SRA</h4>
-<p>Required files: .fasta files, metadata file, a reference database</p>
-<p>(A) Download BAKTA Database</p>
+<h3 id="2-annotate-bacterial-assemblies-and-submit-to-genbank-and-sra">2. Annotate bacterial assemblies and submit to GenBank and SRA</h3>
+<p>Required files: fasta files, metadata file, a reference database</p>
+<p>(A) Download BAKTA database</p>
 <ul>
 <li>
 <p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --bacteria --genbank --sra --submission_wait_time 5 --download_bakta_db true --bakta_db_type &lt;light/full&gt;</code>
-(B) Provide path to existing BAKTA Database</p>
+(B) Provide path to existing BAKTA database</p>
 </li>
 <li>
-<p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --bacteria --genbank --sra --submission_wait_time 5 --bakta_db_path &lt;path/to/bakta/db&gt;</code></p>
+<p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --bacteria --genbank --sra --submission_wait_time 5 --bakta_db_path &lt;path/to/bakta/db&gt;</code>
+Breakdown:</p>
 </li>
-</ul>
-<p>Breakdown:</p>
-<ul>
-<li><code>--bacteria</code>:</li>
+<li>
+<p><code>--bacteria</code>:</p>
+</li>
 <li>The pathogen type is specified as <code>bacteria</code></li>
 <li><code>--download_bakta_db &lt;true/false&gt;</code>:</li>
 <li>This parameter must be specified as <code>true</code> or <code>false</code></li>
 <li><code>--bakta_db_type &lt;light/full&gt;</code>:</li>
-<li>The BAKTA database type is defined in this parameter. <code>light</code> or <code>ful</code>l can be supplied as options for this parameter</li>
+<li>The BAKTA database type is defined in this parameter. <code>light</code> or <code>full</code> can be supplied as options for this parameter</li>
 <li><code>--bakta_db_path /path/to/bakta/db</code>:</li>
 <li>The path to the BAKTA database is defined</li>
 </ul>
-<h3 id="use-case-2-running-submission-only-without-annotation-raw-files">Use Case 2: Running Submission only without Annotation (Raw Files)</h3>
+<h3 id="use-case-2-running-submission-only-without-annotation">Use Case 2: Running Submission only without Annotation</h3>
 <p>Notes: you can only submit raw files to SRA, not to Genbank.</p>
-<h4 id="1-submit-fastqs-to-sra-required-files-fastq-files-metadata-file">1. Submit fastqs to SRA Required files: .fastq files, metadata file</h4>
+<p><strong>1. Submit fastqs to SRA</strong> Required files: fastq files, metadata file</p>
 <ul>
 <li><code>nextflow run main.nf -profile &lt;test,standard&gt;,&lt;singularity,docker&gt; --&lt;virus,bacteria&gt; --annotation false --sra --submission_wait_time 5</code></li>
 <li><code>--annotation</code>:</li>
-<li>The boolean option <code>false</code> is specified for the annotation parameter.</li>
+<li>The boolean option <code>false</code> is specified for the annotation parameter</li>
 </ul>
 
 
