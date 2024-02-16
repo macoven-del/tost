@@ -12,11 +12,8 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - Quick Start: quickstart.md
-  - CDC User Guide: userguide.md
   - Profile Options and Input Files: profile.md
   - Parameters: parameters.md
   - Outputs: outputs.md
-  - Running the Pipeline: run.md
-  - Submission Guide: submission.md
-  - Helpful Links: links.md
+  - CDC User Guide: userguide.md
   - Get in Touch: getintouch.md

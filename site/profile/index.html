@@ -866,14 +866,16 @@
 </tr>
 </tbody>
 </table>
+<p>❗ This pipeline has been tested with paired-end sequence data.</p>
+<p>Example metadata <a href="https://github.com/CDCgov/tostadas/blob/bb47dce749eada90f3c879a3e373a2e27c36eca4/assets/sample_metadata/MPXV_metadata_Sample_Run_1.xlsx">file</a></p>
 <h2 id="customizing-parameters">Customizing Parameters:</h2>
-<p>Parameters can be customized from the command line or by modifying one of the following configuration files: <code>standard.json</code>, <code>standard.yml</code> or <code>nextflow.config</code>.</p>
+<p>Parameters can be customized from the command line or by modifying one of the following configuration files: standard.json, standard.yml or nextflow.config.</p>
 <h3 id="1-customizing-parameters-from-the-command-line">1. Customizing parameters from the command line:</h3>
 <p>Parameters can be overridden during runtime by providing various flags to the <code>nextflow</code> command.</p>
 <p>Example: Modifying the path of the output directory</p>
 <p><code>nextflow run main.nf -profile test,singularity --virus --output_dir /path/to/output/dir</code></p>
-<p>Certain parameters such as <code>-profile</code> and pathogen type <code>(--virus)</code> are required, while others like <code>--output_dir</code> can be specified optionally. The complete list of parameters and the types of input that they require can be found in the Parameters page.</p>
-<h3 id="2-customizing-parameters-by-modifying-the-standardjson-or-standardyml-files">2. Customizing parameters by modifying the <code>standard.json</code> or <code>standard.yml</code> files:</h3>
+<p>Certain parameters such as <code>-profile</code> and pathogen type (<code>--virus</code>) are required, while others like <code>--output_dir</code> can be specified optionally. The complete list of parameters and the types of input that they require can be found in the <a href="">Parameters</a> page.</p>
+<h3 id="2-customizing-parameters-by-modifying-the-standardjson-or-standardyml-files">2. Customizing parameters by modifying the standard.json or standard.yml files:</h3>
 <p>Default parameters can be overridden by making changes to either the <code>standard.yml</code> or <code>standard.json</code> files located in the <code>./params</code> directory. To modify the run with the updated parameters, use the <code>-params-file</code> runtime parameter and specify which file contains the updated parameters.</p>
 <p>Example:</p>
 <p><code>nextflow run main.nf -profile test,singularity --virus -params-file &lt;standard_params.yml or standard_params.json&gt;</code></p>
@@ -895,7 +897,7 @@
 </ul>
 <h3 id="submission-pre-requisites">Submission Pre-requisites:</h3>
 <p>The submission component of the pipeline is adapted from <a href="https://github.com/CDCgov/seqsender">SeqSender</a> public database submission pipeline. It has been developed to allow the user to create a config file to select which databases they would like to upload to and allows for any possible metadata fields by using a YAML to pair the database's metadata fields with your personal metadata field columns. The requirements for this portion of the pipeline to run are listed below.</p>
-<h4 id="a-create-appropriate-accounts-as-needed-for-the-seqsender-public-database-submission-pipeline-integrated-into-tostadas">(A) Create Appropriate Accounts as needed for the SeqSender public database submission pipeline integrated into TOSTADAS:</h4>
+<h4 id="a-create-appropriate-accounts-as-needed-for-the-seqsender-public-database-submission-pipeline-integrated-into-tostadas">(A) Create Appropriate Accounts as needed for the <a href="https://github.com/CDCgov/seqsender">SeqSender</a> public database submission pipeline integrated into TOSTADAS:</h4>
 <ul>
 <li>
 <p>NCBI: If uploading to NCBI archives such as BioSample/SRA/Genbank, you must complete the following steps:</p>
@@ -910,7 +912,7 @@
 <li>Contact email (ideally a service account monitored by several people)</li>
 <li>Whether you intend to submit via FTP or command line Aspera (ascp)</li>
 <li>Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.</li>
-<li>GISAID: A GISAID account is required for submission to GISAID, you can register for an account at <a href="https://www.gisaid.org/"></a>. Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at hcov-19@gisaid.org to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.</li>
+<li>GISAID: A GISAID account is required for submission to GISAID, you can register for an account at <a href="https://www.gisaid.org/">GISAID</a>. Test submissions are first required before a final submission can be made. When your first test submission is complete contact GISAID at hcov-19@gisaid.org to receive a personal CID. GISAID support is not yet implemented but it may be added in the future.</li>
 </ul>
 <h4 id="b-config-file-set-up">(B) Config File Set-up:</h4>
 <p>The template for the submission config file can be found in <code>bin/default_config_files</code> within the repo. This is where you can edit the various parameters you want to include in your submission. Read more at the [SeqSender]https://github.com/CDCgov/seqsender docs.
