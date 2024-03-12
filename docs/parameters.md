@@ -19,7 +19,7 @@ Default parameters are given in the nextflow.config file. This table lists the p
 |--docker_container_vadr	|Name of the Docker container to run VADR annotation	|Yes, if running with docker profile (name as string)|
 
 ## General Subworkflow
-Param	Description	Input Required
+|Param	|Description	|Input Required|
 |---|----|---|
 |--submission	|Toggle for running submission	|Yes (true/false as bool)|
 |--annotation	|Toggle for running annotation	|Yes (true/false as bool)|

@@ -1,5 +1,5 @@
 site_name: TOSTADAS
-repo_url: https://github.com/CDCgov/tostadas/tree/github-pages
+repo_url: https://github.com/CDCgov/tostadas/tree/master
 theme:
   name: material
   icon:
