@@ -3,88 +3,101 @@
 ## Validate Environment
 ### (1) Check that you are in the directory where the TOSTADAS repository was installed by running `pwd`
 Expected Output:
-* `/path/to/working/directory/tostadas`
-This is the default directory set in `nextflow.config` for the provided test input files.
 
-### (2) Change the `submission_config` parameter within `nextflow.config` (if running with your own data) to the location of your personal submission config file. Note that we provide a virus and bacterial test config depending on the use case.
-❗ You must have your personal submission configuration file set up before running the default parameters for the pipeline and/or if you plan on using sample submission at all. More information on running the submission sub-workflow can be found here: [More Information on Submission]()
+`/path/to/working/directory/tostadas`
+### (2) Change the submission_config parameter within nextflow.config to the location of your personal submission config file.
+Bacterial and viral submission configurations are provided in the repo for testing purposes, but you will not be able to perform a submission without providing a personal submission configuration.
+
+More information on running the submission sub-workflow can be found here: [More Information on Submission](https://github.com/CDCgov/tostadas/wiki/Profile-Options-&-Input-Files#running-submission-only)
 
 ## Pipeline Execution Examples
 We describe a few use-cases of the pipeline below. For more information on input parameters, refer to the documentation found in the following pages:
 
-- [Profile Options and Input Files]()
-- [Parameters]()
-❗ Note: For all use cases, the paths to the *required files* should be specified in the `nextflow.config` file or the `params.yaml` file.
+* [Profile Options and Input Files](https://github.com/CDCgov/tostadas/wiki/Profile-Options-&-Input-Files)
+* [Parameters](https://github.com/CDCgov/tostadas/wiki/Parameters)
+❗ The paths to the required files must be specified in the nextflow.config file or the params.yaml file.
 
-### Basic Usage:
-Before we dive into the more complex use cases of the pipeline, let's look at the most basic way the pipeline can be run:
+## Basic Usage:
+Before we dive into the more complex use-cases of the pipeline, let's look at the most basic way the pipeline can be run:
 
-* `nextflow run main.nf -profile <singularity/docker/conda> --virus`
-- `-profile`:
- - This parameter is required to specify the run-time environment (singularity, docker or conda). Conda implementation is less stable, singularity or docker is recommended.
- - Optionally, you may specify test as an additional argument to this parameter. If test is not provided as an option, the pipeline will run using the configurations found in the nextflow.config file.
+`nextflow run main.nf -profile <test(optional)>,<singularity|docker|conda> --<virus|bacteria>`
+`-profile <test(optional)>,<singularity|docker|conda>`
+Specify the run-time environment (singularity, docker or conda). The conda implementation is less stable so using singularity or docker is recommended if available on your system.
+You may specify the optional `-profile` argument `test` to force the pipeline to ignore the custom configuration found in your nextflow.config file and instead run using a pre-configured test data set and configuration.
+`--<virus|bacteria>`:
+The pathogen type must be specified for the pipeline to run.
+❗ Important note on arguments: Arguments with a single “-“, such as -profile, are arguments to nextflow. Arguments with a double “--“, such as --virus or –-bacteria are arguments to the TOSTADAS pipeline.
+
 Example:
 
-* `nextflow run main.nf -profile singularity,test --virus`
-- --virus:
- - The pathogen type must be specified in order for the pipeline to run. Here virus is specified.
-### Providing additional parameters through the command line:
-Parameters can be overridden during runtime by providing various flags to the nextflow command.
+`nextflow run main.nf -profile test,singularity --virus`
+### Breakdown:
 
-### Example: Modifying the submission wait time
+* `-profile test,singularity`
+ * Set compute environment to singularity
+ * Run with test configuration
+* --virus
+ * Viral sample
+Overriding parameters through the command line:
+Any parameter defined in nexflow.config can be overridden at runtime by providing the parameter as a command line argument with the “--” prefix.
 
-By default, the default parameters will trigger a wait time equal to number of samples, times 180 seconds. This default can be overridden by running the following command instead:
+### Example: Modifying the output directory
 
-* `nextflow run main.nf -profile <singularity/docker/conda> --virus --submission_wait_time <integer value>` 
-### Use Case 1: Running Annotation and Submission
-### 1. Annotate viral assemblies and submit to GenBank and SRA
+By default, the pipeline will create and store pipeline outputs in the test_output directory. You can modify the location output files are stored by adding the `--output_dir` flag to the command line and providing the new path as a string.
 
-Required files: fasta files, metadata file
+`nextflow run main.nf -profile test,singularity –-virus --output_dir </path/to/output/dir>`
+### Running Annotation and Submission
+#### (1) Annotate viral assemblies and submit them to GenBank and SRA
 
-* `nextflow run main.nf -profile <singularity/docker/conda> --virus --genbank --sra --submission_wait_time 5`
-Breakdown:
+Database targets are specified at run time. You can specify more than one target by adding additional arguments to the command line.
 
-- `-profile`:
- - Compute environment is specified
-- `--virus`:
- - Pathogen type is specified as `virus`
-`--sra`:
- - `sra` is specified as the database for submission
-- `--genbank`:
- - `genbank` is specified as the database for submission
-- `--submission_wait_time`:
- - The `submission_wait_time` parameter is modified
-❗ **Pre-requisite to submit to GenBank**: In order to submit to GenBank, the program `table2asn` must be executable in your local environment. Copy [table2asn](https://www.ncbi.nlm.nih.gov/genbank/table2asn/) to your `tostadas/bin` directory by running the following lines of code:
+`nextflow run main.nf -profile singularity --virus --annotation --submission --genbank --sra --meta_path </path/to/meta_data/file> –-fastq_path </path/to/fastq/file/directory> --fasta_path </path/to/fasta/file/directory>`
+##### Breakdown:
 
-* `cd ./tostadas/bin/`
-* `wget https://ftp.ncbi.nlm.nih.gov/asn1-converters/by_program/table2asn/linux64.table2asn.gz`
-* `gunzip linux64.table2asn.gz`
-* `mv linux64.table2asn table2asn`
-### 2. Annotate bacterial assemblies and submit to GenBank and SRA
+* `-profile singularity`
+ * Set compute environment to singularity
+* `--virus`
+ * Viral sample
+* `--sra`
+ * Prepare an SRA submission
+* `--genbank`
+ * Prepare a GenBank submission
+* `--annotation`
+ * Run annotation
+* `--submission`
+ * Run submission
+* `--fasta_path`
+ * Provide path to directory containing your fasta files
+* `--fastq_path`
+ * Provide path to directory containing your fastq files
+* `--meta_path`
+ * Provide path to your meta-data file
+#### (2) Annotate bacterial assemblies and submit to GenBank and SRA
 
-Required files: fasta files, metadata file, a reference database
+❗ Note – If you don’t have the BAKTA database, run with the `--download_bakta_db true` flag or download from it from this [Link](https://zenodo.org/records/10522951). If you do have the database, skip ahead to (B).
 
-(A) Download BAKTA database
+#### (A) Download Bakta database
 
-* `nextflow run main.nf -profile <singularity/docker/conda> --bacteria --genbank --sra --submission_wait_time 5 --download_bakta_db true --bakta_db_type <light/full>`
-(B) Provide path to existing BAKTA database
+`nextflow run main.nf -profile singularity --bacteria --genbank --sra --download_bakta_db true --bakta_db_type <light|full> --submission –annotation --meta_path /path/to/meta_data/file –fastq_path /path/to/fastq/file/directory --fasta_path /path/to/fasta/file/directory`
+#### (B) Provide path to existing Bakta database
 
-* `nextflow run main.nf -profile <singularity/docker/conda> --bacteria --genbank --sra --submission_wait_time 5 --bakta_db_path <path/to/bakta/db>`
-Breakdown:
+`nextflow run main.nf -profile singularity –-bacteria ––annotation --submission -–genbank --sra --bakta_db_path <path/to/bakta/db> --meta_path </path/to/meta_data/file> --fastq_path </path/to/fastq/file/directory> --fasta_path </path/to/fasta/file/directory>`
+##### Breakdown:
 
-- `--bacteria`:
- - The pathogen type is specified as `bacteria`
-- `--download_bakta_db <true/false>`:
- - This parameter must be specified as `true` or `false`
-- `--bakta_db_type <light/full>`:
- - The BAKTA database type is defined in this parameter. `light` or `full` can be supplied as options for this parameter
-- `--bakta_db_path /path/to/bakta/db`:
- - The path to the BAKTA database is defined
-### Use Case 2: Running Submission only without Annotation
-Notes: you can only submit raw files to SRA, not to Genbank.
+* `--bacteria`
+ * Bacterial sample
+* `--download_bakta_db true`
+ * Download or refresh the Bakta database
+* `--bakta_db_type <light|full>`
+ * Choose between the faster, lighter-weight light Bakta database or the larger and slower, but more accurate, full Bakta database
+* `--bakta_db_path </path/to/bakta/db>`
+ * The path to the Bakta database
+##### Use Case 2: Running Submission only without Annotation
 
-**1. Submit fastqs to SRA** Required files: fastq files, metadata file
+❗ Note: you can only submit raw files to SRA, not to Genbank.
 
-* `nextflow run main.nf -profile <test,standard>,<singularity,docker> --<virus,bacteria> --annotation false --sra --submission_wait_time 5`
-- `--annotation`:
- - The boolean option `false` is specified for the annotation parameter
+#### (1) Submit fastqs to SRA
+
+`nextflow run main.nf -profile singularity --virus --annotation false --sra –submission --meta_path </path/to/meta_data/file> --fastq_path </path/to/fastq/file/directory>`
+`--annotation false`
+Disable annotation
