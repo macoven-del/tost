@@ -71,14 +71,14 @@ The submission component of the pipeline is adapted from SeqSender public databa
 
 * NCBI: If uploading to NCBI archives such as BioSample/SRA/Genbank, you must complete the following steps:
 
- * Create a center account: Contact the following e-mail for account creation: sra@ncbi.nlm.nih.gov  and provide the following information:
-  * Suggested center abbreviation (16 char max)
-  * Center name (full), center URL & mailing address (including country and postcode)
-  * Phone number (main phone for center or lab)
-  * Contact person (someone likely to remain at the location for an extended time)
-  * Contact email (ideally a service account monitored by several people)
-  * Whether you intend to submit via FTP or command line Aspera (ascp)
- * Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.
+    * Create a center account: Contact the following e-mail for account creation: sra@ncbi.nlm.nih.gov  and provide the following information:
+        * Suggested center abbreviation (16 char max)
+        * Center name (full), center URL & mailing address (including country and postcode)
+        * Phone number (main phone for center or lab)
+        * Contact person (someone likely to remain at the location for an extended time)
+        * Contact email (ideally a service account monitored by several people)
+        * Whether you intend to submit via FTP or command line Aspera (ascp)
+    * Gain access to an upload directory: Following center account creation, a test area and a production area will be created. Deposit the XML file and related data files into a directory and follow the instructions SRA provides via email to indicate when files are ready to trigger the pipeline.
 * GISAID: GISAID support is not yet implemented but it may be added in the future.
 
 (B) Config File Set-up:

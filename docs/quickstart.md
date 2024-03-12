@@ -36,10 +36,10 @@ Example:
 ### Breakdown:
 
 * `-profile test,singularity`
- * Set compute environment to singularity
- * Run with test configuration
+    * Set compute environment to singularity
+    * Run with test configuration
 * --virus
- * Viral sample
+    * Viral sample
 Overriding parameters through the command line:
 Any parameter defined in nexflow.config can be overridden at runtime by providing the parameter as a command line argument with the “--” prefix.
 
@@ -57,23 +57,23 @@ Database targets are specified at run time. You can specify more than one target
 ##### Breakdown:
 
 * `-profile singularity`
- * Set compute environment to singularity
+    * Set compute environment to singularity
 * `--virus`
- * Viral sample
+    * Viral sample
 * `--sra`
- * Prepare an SRA submission
+    * Prepare an SRA submission
 * `--genbank`
- * Prepare a GenBank submission
+    * Prepare a GenBank submission
 * `--annotation`
- * Run annotation
+    * Run annotation
 * `--submission`
- * Run submission
+    * Run submission
 * `--fasta_path`
- * Provide path to directory containing your fasta files
+    * Provide path to directory containing your fasta files
 * `--fastq_path`
- * Provide path to directory containing your fastq files
+    * Provide path to directory containing your fastq files
 * `--meta_path`
- * Provide path to your meta-data file
+    * Provide path to your meta-data file
 #### (2) Annotate bacterial assemblies and submit to GenBank and SRA
 
 ❗ Note – If you don’t have the BAKTA database, run with the `--download_bakta_db true` flag or download from it from this [Link](https://zenodo.org/records/10522951). If you do have the database, skip ahead to (B).
@@ -87,13 +87,13 @@ Database targets are specified at run time. You can specify more than one target
 ##### Breakdown:
 
 * `--bacteria`
- * Bacterial sample
+    * Bacterial sample
 * `--download_bakta_db true`
- * Download or refresh the Bakta database
+    * Download or refresh the Bakta database
 * `--bakta_db_type <light|full>`
- * Choose between the faster, lighter-weight light Bakta database or the larger and slower, but more accurate, full Bakta database
+    * Choose between the faster, lighter-weight light Bakta database or the larger and slower, but more accurate, full Bakta database
 * `--bakta_db_path </path/to/bakta/db>`
- * The path to the Bakta database
+    * The path to the Bakta database
 ##### Use Case 2: Running Submission only without Annotation
 
 ❗ Note: you can only submit raw files to SRA, not to Genbank.

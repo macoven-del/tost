@@ -643,36 +643,36 @@
 <h3 id="dependencies">Dependencies:</h3>
 <ul>
 <li>Nextflow v. 21.01.03 or newer</li>
-<li>Compute environment (docker, singularity or conda)
-❗ Note: If you are a CDC user, please follow the set-up instructions found on this page: <a href="https://github.com/CDCgov/tostadas/wiki/CDC-User-Guide">CDC User Guide</a></li>
+<li>Compute environment (docker, singularity or conda)</li>
 </ul>
+<p>❗ Note: If you are a CDC user, please follow the set-up instructions found on this page: <a href="https://github.com/CDCgov/tostadas/wiki/CDC-User-Guide">CDC User Guide</a></p>
 <h3 id="1-clone-the-repository-to-your-local-machine">(1) Clone the repository to your local machine:</h3>
 <ul>
-<li><code>git clone https://github.com/CDCgov/tostadas.git</code>
-❗ Note: If you have mamba or nextflow installed in your local environment, you may skip steps 2, 3 (mamba installation) and 6 (nextflow installation) accordingly.</li>
+<li><code>git clone https://github.com/CDCgov/tostadas.git</code></li>
 </ul>
+<p>❗ Note: If you have mamba or nextflow installed in your local environment, you may skip steps 2, 3 (mamba installation) and 6 (nextflow installation) accordingly.</p>
 <h3 id="2-install-mamba-and-add-it-to-your-path">(2) Install mamba and add it to your PATH</h3>
 <p>2a. Install mamba</p>
 <p>❗ Note: If you have mamba installed in your local environment, skip ahead to step 3 (Create and activate a conda environment)</p>
 <p><code>curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download</code>
 <code>Mambaforge-$(uname)-$(uname -m).sh</code>
-<code>bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/mambaforge</code>
-2b. Add mamba to PATH:</p>
+<code>bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/mambaforge</code></p>
+<p>2b. Add mamba to PATH:</p>
 <p><code>export PATH="$HOME/mambaforge/bin:$PATH"</code></p>
 <h3 id="3-create-and-activate-a-conda-environment">(3) Create and activate a conda environment</h3>
 <p>3a. Create an empty conda environment to install Nextflow into</p>
-<p><code>conda create --name tostadas</code>
-3b. Activate the environment</p>
-<p><code>conda activate tostadas</code>
-Verify which environment is active by running the following conda command: <code>conda env list</code>. The active environment will be denoted with an asterisk <code>*</code></p>
+<p><code>conda create --name tostadas</code></p>
+<p>3b. Activate the environment</p>
+<p><code>conda activate tostadas</code></p>
+<p>Verify which environment is active by running the following conda command: <code>conda env list</code>. The active environment will be denoted with an asterisk <code>*</code></p>
 <h3 id="4-install-nextflow-using-mamba-and-the-bioconda-channel">(4) Install Nextflow using mamba and the bioconda Channel</h3>
 <h4 id="install-nextflow">Install Nextflow</h4>
 <p><code>mamba install -c bioconda nextflow</code></p>
 <h4 id="ensure-installation-was-successful-by-running-nextflow-with-the-v-or-version-flag">Ensure installation was successful by running nextflow with the <code>-v</code> or <code>-version</code> flag</h4>
-<p><code>nextflow -v</code>
-Expected output:</p>
-<p><code>nextflow version &lt;CURRENT VERSION&gt;</code>
-The exact version of Nextflow returned will differ from installation to installation. It is important that the command executes successfully, and a version number is returned.</p>
+<p><code>nextflow -v</code></p>
+<p>Expected output:</p>
+<p><code>nextflow version &lt;CURRENT VERSION&gt;</code></p>
+<p>The exact version of Nextflow returned will differ from installation to installation. It is important that the command executes successfully, and a version number is returned.</p>
 <h3 id="5-update-the-default-submissions-config-file-with-your-ncbi-username-and-password-and-run-the-following-nextflow-command-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment">(5) Update the default submissions config file with your NCBI username and password, and run the following nextflow command to execute the scripts with default parameters and the local run environment:</h3>
 <p><code># update this config file (you don't have to use vim)</code>
 <code>vim bin/config_files/default_config.yaml</code>
