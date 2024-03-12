@@ -812,9 +812,9 @@
 <p>We describe a few use-cases of the pipeline below. For more information on input parameters, refer to the documentation found in the following pages:</p>
 <ul>
 <li><a href="https://github.com/CDCgov/tostadas/wiki/Profile-Options-&amp;-Input-Files">Profile Options and Input Files</a></li>
-<li><a href="https://github.com/CDCgov/tostadas/wiki/Parameters">Parameters</a>
-❗ The paths to the required files must be specified in the nextflow.config file or the params.yaml file.</li>
+<li><a href="https://github.com/CDCgov/tostadas/wiki/Parameters">Parameters</a></li>
 </ul>
+<p>❗ The paths to the required files must be specified in the nextflow.config file or the params.yaml file.</p>
 <h2 id="basic-usage">Basic Usage:</h2>
 <p>Before we dive into the more complex use-cases of the pipeline, let's look at the most basic way the pipeline can be run:</p>
 <p><code>nextflow run main.nf -profile &lt;test(optional)&gt;,&lt;singularity|docker|conda&gt; --&lt;virus|bacteria&gt;</code>
@@ -822,8 +822,8 @@
 Specify the run-time environment (singularity, docker or conda). The conda implementation is less stable so using singularity or docker is recommended if available on your system.
 You may specify the optional <code>-profile</code> argument <code>test</code> to force the pipeline to ignore the custom configuration found in your nextflow.config file and instead run using a pre-configured test data set and configuration.
 <code>--&lt;virus|bacteria&gt;</code>:
-The pathogen type must be specified for the pipeline to run.
-❗ Important note on arguments: Arguments with a single “-“, such as -profile, are arguments to nextflow. Arguments with a double “--“, such as --virus or –-bacteria are arguments to the TOSTADAS pipeline.</p>
+The pathogen type must be specified for the pipeline to run.</p>
+<p>❗ Important note on arguments: Arguments with a single “-“, such as -profile, are arguments to nextflow. Arguments with a double “--“, such as --virus or –-bacteria are arguments to the TOSTADAS pipeline.</p>
 <p>Example:</p>
 <p><code>nextflow run main.nf -profile test,singularity --virus</code></p>
 <h3 id="breakdown">Breakdown:</h3>
