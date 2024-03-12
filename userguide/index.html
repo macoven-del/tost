@@ -391,9 +391,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-clone-the-repository" class="md-nav__link">
+  <a href="#1-clone-the-repository-to-your-local-machine" class="md-nav__link">
     <span class="md-ellipsis">
-      (1) Clone the repository:
+      (1) Clone the repository to your local machine:
     </span>
   </a>
   
@@ -409,44 +409,20 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-ensure-that-nextflow-is-available-by-running" class="md-nav__link">
+  <a href="#3-ensure-that-nextflow-is-available-by-running-nextflow-v" class="md-nav__link">
     <span class="md-ellipsis">
-      (3) Ensure that Nextflow is available by running:
+      (3) Ensure that Nextflow is available by running nextflow -v
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment" class="md-nav__link">
+  <a href="#4-update-the-default-submissions-config-file-with-your-ncbi-username-and-password-and-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      (4) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
+      (4) Update the default submissions config file with your NCBI username and password, and run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="(4) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-viral-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Viral Reads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-bacterial-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Bacterial Reads
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -520,9 +496,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-clone-the-repository" class="md-nav__link">
+  <a href="#1-clone-the-repository-to-your-local-machine" class="md-nav__link">
     <span class="md-ellipsis">
-      (1) Clone the repository:
+      (1) Clone the repository to your local machine:
     </span>
   </a>
   
@@ -538,44 +514,20 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-ensure-that-nextflow-is-available-by-running" class="md-nav__link">
+  <a href="#3-ensure-that-nextflow-is-available-by-running-nextflow-v" class="md-nav__link">
     <span class="md-ellipsis">
-      (3) Ensure that Nextflow is available by running:
+      (3) Ensure that Nextflow is available by running nextflow -v
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment" class="md-nav__link">
+  <a href="#4-update-the-default-submissions-config-file-with-your-ncbi-username-and-password-and-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      (4) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
+      (4) Update the default submissions config file with your NCBI username and password, and run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="(4) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-viral-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Viral Reads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-bacterial-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Bacterial Reads
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -604,31 +556,21 @@
 
 <h1 id="cdc-user-guide">CDC User Guide</h1>
 <h2 id="environment-setup">Environment Setup</h2>
-<h3 id="1-clone-the-repository">(1) Clone the repository:</h3>
-<p>Clone the tostadas repository to your working environment by following the instructions found here: <code>cdc_configs_access</code></p>
+<h3 id="1-clone-the-repository-to-your-local-machine">(1) Clone the repository to your local machine:</h3>
+<p><code>git clone https://github.com/CDCgov/tostadas.git</code>
+<code>cd tostadas</code></p>
 <h3 id="2-load-the-nextflow-module">(2) Load the Nextflow module:</h3>
 <p>Initialize the nextflow module by running the following command:</p>
-<ul>
-<li><code>ml nextflow</code></li>
-</ul>
-<h3 id="3-ensure-that-nextflow-is-available-by-running">(3) Ensure that Nextflow is available by running:</h3>
-<ul>
-<li><code>nextflow -v</code></li>
-</ul>
+<p><code>ml nextflow</code></p>
+<h3 id="3-ensure-that-nextflow-is-available-by-running-nextflow-v">(3) Ensure that Nextflow is available by running nextflow -v</h3>
 <p>Expected Output:</p>
-<ul>
-<li><code>nextflow version &lt;CURRENT VERSION&gt;</code></li>
-</ul>
-<h3 id="4-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment">(4) Run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:</h3>
-<h4 id="for-viral-reads">For Viral Reads</h4>
-<ul>
-<li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --virus</code></li>
-</ul>
-<h4 id="for-bacterial-reads">For Bacterial Reads</h4>
-<ul>
-<li><code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --bacteria</code>
-The outputs of the pipeline will appear in the <code>test_output</code> folder within the project directory. You can specify an output directory in the <code>config</code> file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</li>
-</ul>
+<p><code>nextflow version &lt;CURRENT VERSION&gt;</code></p>
+<h3 id="4-update-the-default-submissions-config-file-with-your-ncbi-username-and-password-and-run-one-of-the-following-nextflow-commands-to-execute-the-scripts-with-default-parameters-and-the-local-run-environment">(4) Update the default submissions config file with your NCBI username and password, and run one of the following nextflow commands to execute the scripts with default parameters and the local run environment:</h3>
+<p><code># update this config file (you don't have to use vim)</code>
+<code>vim bin/config_files/default_config.yaml</code>
+<code># for virus reads</code>
+<code>nextflow run main.nf -profile test,&lt;singularity/docker/conda&gt; --virus</code>
+The outputs of the pipeline will appear in the <code>test_output</code> folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</p>
 
 
 

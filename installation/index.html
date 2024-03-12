@@ -668,7 +668,7 @@ Verify which environment is active by running the following conda command: <code
 <h3 id="4-install-nextflow-using-mamba-and-the-bioconda-channel">(4) Install Nextflow using mamba and the bioconda Channel</h3>
 <h4 id="install-nextflow">Install Nextflow</h4>
 <p><code>mamba install -c bioconda nextflow</code></p>
-<h4 id="ensure-installation-was-successful-by-running-nextflow-with-the-v-or-version-flag">Ensure installation was successful by running nextflow with the -v or -version flag</h4>
+<h4 id="ensure-installation-was-successful-by-running-nextflow-with-the-v-or-version-flag">Ensure installation was successful by running nextflow with the <code>-v</code> or <code>-version</code> flag</h4>
 <p><code>nextflow -v</code>
 Expected output:</p>
 <p><code>nextflow version &lt;CURRENT VERSION&gt;</code>
@@ -677,8 +677,8 @@ The exact version of Nextflow returned will differ from installation to installa
 <p><code># update this config file (you don't have to use vim)</code>
 <code>vim bin/config_files/default_config.yaml</code>
 <code># for virus reads</code>
-<code>nextflow run main.nf -profile test,&lt;singularity|docker|conda&gt; --virus</code>
-❗ Note: If you do not update the default_config.yaml file with your NCBI credentials, you will see the following command error: <code>Error:530 Login incorrect</code>.</p>
+<code>nextflow run main.nf -profile test,&lt;singularity|docker|conda&gt; --virus</code></p>
+<p>❗ Note: If you do not update the default_config.yaml file with your NCBI credentials, you will see the following command error: <code>Error:530 Login incorrect</code>.</p>
 <p>The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the <code>--output_dir</code> flag in your <code>nextflow run</code> command.</p>
 
 
