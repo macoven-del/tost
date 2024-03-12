@@ -34,7 +34,7 @@ Verify which environment is active by running the following conda command: `cond
 #### Install Nextflow
 `mamba install -c bioconda nextflow`
 
-#### Ensure installation was successful by running nextflow with the -v or -version flag 
+#### Ensure installation was successful by running nextflow with the `-v` or `-version` flag 
 `nextflow -v`
 Expected output:
 
@@ -46,6 +46,7 @@ The exact version of Nextflow returned will differ from installation to installa
 `vim bin/config_files/default_config.yaml`
 `# for virus reads`
 `nextflow run main.nf -profile test,<singularity|docker|conda> --virus`
+
 ❗ Note: If you do not update the default_config.yaml file with your NCBI credentials, you will see the following command error: `Error:530 Login incorrect`.
 
 The outputs of the pipeline will appear in the test_output folder within the project directory. You can specify an output directory in the config file or by supplying a path to the `--output_dir` flag in your `nextflow run` command.

@@ -1,40 +1,35 @@
 # Home
-
 ## Overview
-TOSTADAS is designed to fulfill common sequence submission use cases. The tool runs three sub-processes:
 
-1. Metadata Validation – This workflow checks if metadata conforms to NCBI standards and matches the input .fasta file(s)
-2. Gene Annotation – This workflow runs gene annotation on fasta-formatted genomes using one of three annotation methods: RepeatMasker and Liftoff, VADR or BAKTA
-3. Submission – This workflow generates the necessary files and information for submission to NCBI and optionally submit to NCBI.
+### T O S T A D A S
+Toolkit for Open Sequence Triage, Annotation, and DAtabase Submission
 
-TOSTADAS is flexible, allowing you to choose which portions of the pipeline to run and which to skip. For example, you can submit .fastq files and metadata without performing gene annotation.
+A portable, open-source pipeline designed to streamline submission of pathogen genomic data to public repositories. Reducing barriers to timely data submission increases the value of public repositories for both public health decision making and scientific research. TOSTADAS facilitates routine sequence submission by standardizing:
 
-The current distribution has been tested with Pox virus sequences as well as some bacteria. Ongoing development aims to make the pipeline pathogen agnostic.
+* Metadata Validation
+* Genome Annotation
+* File submission
+The current release is tested with sequence data from Poxviruses and select bacteria but TOSTADAS is designed to be flexible, modular, and pathogen agnostic, allowing users to customize their submission of raw read data, assembled genomes, or both.
 
 ## Pipeline Summary
-### Metadata Validation
-The validation workflow checks that user provided metadata conforms to NCBI standards and matches the input data file(s). To allow for easy multi-sample submission, TOSTADAS can split a multi-sample Excel (.xlsx) file into separate tab delimited files (.tsv) for each individual sample.
+### (1) Metadata Validation
+Verifies that user-provided metadata conforms to NCBI standards and match the sequence data file(s), all of which are organized in an Excel spreadsheet ([example file](https://github.com/CDCgov/tostadas/blob/dev/assets/metadata_template.xlsx)). By default, TOSTADAS uses a set of metadata fields appropriate for most pathogen genomic data submissions, but can be configured to accommodate custom metadata fields specific to any use case. A full guide to using custom metadata fields can be found here: [Custom Metadata Guide](https://github.com/CDCgov/tostadas/blob/457242fb15973f69cb3578367317a8b5e7c619f7/docs/custom_metadata_guide.md)
 
-TOSTADAS can accept custom metadata fields specific to a users' pathogen, sample type, or workflow. Additionally, TOSTADAS offers powerful validation tools for user-created fields, allowing users to specify which samples to apply rules to, replace empty values with user specified replacements, rename existing fields and other operations. These features can be enabled with the `validate_custom_fields` parameter. Custom fields can be specified using the `custom_fields_file` parameter.
+### (2) Gene Annotation
+Optional gene calling and feature annotation of assembled genomes (FASTA) using one of the following:
 
-A full guide to using custom metadata fields can be found here: [Custom Metadata Guide](https://github.com/CDCgov/tostadas/blob/457242fb15973f69cb3578367317a8b5e7c619f7/docs/custom_metadata_guide.md)
+(1) RepeatMasker + Liftoff (viral)
 
-## Gene Annotation
-TOSTADAS offers three optional annotation options:
+* Optimized for variola and mpox genomes, this workflow combines [RepeatMasker](https://www.repeatmasker.org/) for annotating repeat motifs and [Liftoff](https://github.com/agshumate/Liftoff) to annotate functional regions. Execution requires a reference genome (FASTA) and feature list (GFF3) definition. Modifications likely necessary for use with other pathogens.
 
-### 1. RepeatMasker and Liftoff
+(2) VADR (viral)
 
-- The RepeatMasker and Liftoff workflow annotates fasta-formatted sequences based upon a provided reference and annotation file. This workflow was optimized for variola genome annotation and may require modification for other pathogens. This workflow runs [RepeatMasker](https://www.repeatmasker.org/) to annotate repeat motifs, followed by [Liftoff](https://github.com/agshumate/Liftoff) to annotate functional regions. These results are combined into a single feature file (.gff3). The Liftoff annotation workflow requires a reference genome (.fasta), reference feature .gff, single sample .fasta files, and metadata in Excel .xlsx format. Be sure to specify the correct database in the params for this option.
+* Annotates genomes using a set of homologous reference models. TOSTADAS comes packaged with support for [monkeypox virus](https://github.com/CDCgov/tostadas/tree/master/vadr_files/mpxv-models) and a full list of supported pathogens is available from [VADR GitHub Repository](https://github.com/ncbi/vadr).
 
-### 2. VADR
+(3) Bakta (bacterial)
 
-- The VADR workflow annotates fasta-formatted viral genomes using RefSeq annotation from a set of homologous reference models. This workflow requires single sample fasta files, metadata in .xlsx format, and reference information for the pathogen genome. TOSTADAS comes packaged with support for [monkeypox (mpxv) annotation] (https://github.com/CDCgov/tostadas/tree/master/vadr_files/mpxv-models). You can find information on other supported pathogens at the [VADR GitHub Repository] (https://github.com/ncbi/vadr).
+* Annotates bacterial genomes and plasmids using [Bakta](https://github.com/CDCgov/tostadas/tree/master#gene-annotation). Execution requires a reference database ([found here](https://zenodo.org/records/10522951)), which can be downloaded at runtime.
+All annotation options produce a general feature format file (GFF) and NCBI feature table (TBL) compatible with downstream NCBI submission requirements.
 
-### 3. Bakta
-
-- The Bakta workflow annotates fasta-formatted bacterial genomes & plasmids using the [Bakta](https://github.com/CDCgov/tostadas/tree/master#gene-annotation) software. This workflow requires single sample .fasta files, metadata in .xlsx format, and optional reference database for annotation (found [here](https://zenodo.org/records/7669534)).
-
-All annotation workflows produce a general feature format file (.gff3) and NCBI feature table (tbl) compatible with NCBI submission requirements.
-
-## Submission
-The TOSTADAS Submission workflow generates the necessary files for Genbank submission, a BioSample ID, then optionally uploads Fastq files via FTP to SRA. This workflow was adapted from [SeqSender](https://github.com/CDCgov/seqsender) public database submission pipeline.
+### (3) Submission
+Prepare necessary submission files for BioSample, SRA, and/or GenBank depending on the provided inputs and perform optional upload to NCBI via ftp. This workflow was adapted from the [SeqSender](https://github.com/CDCgov/seqsender) public database submission pipeline.

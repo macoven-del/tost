@@ -77,7 +77,7 @@ Param	Description	Input Required
 |--vadr_models_dir	|File path to models for MPXV used by VADR annotation	|Yes (folder name as string)|
 
 ## BAKTA
-Controlling Bakta within TOSTADAS uses parameters of the same name with prefix --bakta_ as described below. For more details, visit the [Bakta GitHub page](https://github.com/oschwengers/bakta).
+Controlling Bakta within TOSTADAS uses parameters of the same name with prefix `--bakta_` as described below. For more details, visit the [Bakta GitHub page](https://github.com/oschwengers/bakta).
 
 |Param	|Description	|Input Required|
 |---|---|---|

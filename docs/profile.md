@@ -49,22 +49,22 @@ Example:
 ### (3) Customizing parameters by modifying the nextflow.config file:
 Default parameters can be also be overridden by making changes to the nextflow.config file located in the project directory. By default, if the test option is not provided during runtime, the run configuration will be read from the nextflow.config file.
 
-#### Understanding Profiles and Environments:
+## Understanding Profiles and Environments:
 Within the nextflow pipeline the `-profile` parameter is required to specify the computing environment of the run. The options of `docker`, `singularity` or `conda` can passed in. The conda environment is less stable than the docker or singularity. We recommend you choose docker or singularity when running the pipeline.
 
 Optionally, the `test` option can be specified in the `-profile` parameter. If test is not specified, parameters are read from the nextflow.config file. The test params should remain the same for testing purposes.
 
-#### Running with Annotation and Submission:
+## Running with Annotation and Submission:
 You will want to define whether to run the full pipeline with submission or without submission using the `--submission` and `--annotation` flags. By default the pipeline will run both sub-workflows and submit to submit to GenBank and SRA. If you want to submit to only SRA, specify `--genbank false --sra`.
 
 `nextflow run main.nf -profile <singularity/docker/conda> --virus --genbank --sra --submission_wait_time 5`
-#### Running Submission only:
+## Running Submission only:
 You will want to define whether to run the full pipeline with submission or without submission using the `--submission` and `--annotation` flags. By default, the pipeline will run both sub-workflows. To only run the submission sub-workflow, specify `--annotation false`.  By default the pipeline will submit to GenBank and SRA. If you want to submit to only SRA, specify `--genbank false --sra`.
 
 ❗ Note: you can only submit raw files to SRA, not to Genbank.
 
 `nextflow run main.nf -profile <test,standard>,<singularity,docker> --<virus,bacteria> --annotation false --sra --submission_wait_time 5`
-#### Submission Pre-requisites:
+## Submission Pre-requisites:
 The submission component of the pipeline is adapted from SeqSender public database submission pipeline. It has been developed to allow the user to create a config file to select which databases they would like to upload to and allows for any possible metadata fields by using a YAML to pair the database's metadata fields with your personal metadata field columns. The requirements for this portion of the pipeline to run are listed below.
 
 (A) Create Appropriate Accounts as needed for the SeqSender public database submission pipeline integrated into TOSTADAS:
