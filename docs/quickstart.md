@@ -15,6 +15,7 @@ We describe a few use-cases of the pipeline below. For more information on input
 
 * [Profile Options and Input Files](https://github.com/CDCgov/tostadas/wiki/Profile-Options-&-Input-Files)
 * [Parameters](https://github.com/CDCgov/tostadas/wiki/Parameters)
+
 ❗ The paths to the required files must be specified in the nextflow.config file or the params.yaml file.
 
 ## Basic Usage:
@@ -26,6 +27,7 @@ Specify the run-time environment (singularity, docker or conda). The conda imple
 You may specify the optional `-profile` argument `test` to force the pipeline to ignore the custom configuration found in your nextflow.config file and instead run using a pre-configured test data set and configuration.
 `--<virus|bacteria>`:
 The pathogen type must be specified for the pipeline to run.
+
 ❗ Important note on arguments: Arguments with a single “-“, such as -profile, are arguments to nextflow. Arguments with a double “--“, such as --virus or –-bacteria are arguments to the TOSTADAS pipeline.
 
 Example:

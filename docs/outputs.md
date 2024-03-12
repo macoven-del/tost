@@ -2,6 +2,7 @@
 
 ## Pipeline Overview:
 The workflow will generate outputs in the following order:
+
 * Validation
  * Responsible for QC of metadata
  * Aligns sample metadata .xlsx to sample .fasta
@@ -16,6 +17,7 @@ The workflow will generate outputs in the following order:
 
 ## Output Directory Formatting:
 The outputs are recorded in the directory specified within the nextflow.config file and will contain the following:
+
 * validation_outputs (name configurable with `val_output_dir`)
  * name of metadata sample file
   * errors
@@ -48,6 +50,7 @@ The outputs are recorded in the directory specified within the nextflow.config f
   * commands_used
 ## Understanding Pipeline Outputs:
 The pipeline outputs include:
+
 * metadata.tsv files for each sample
 * separate fasta files for each sample
 * separate gff files for each sample

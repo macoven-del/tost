@@ -397,10 +397,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="(3) Customizing parameters by modifying the nextflow.config file:">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#understanding-profiles-and-environments" class="md-nav__link">
     <span class="md-ellipsis">
       Understanding Profiles and Environments:
@@ -408,8 +412,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#running-with-annotation-and-submission" class="md-nav__link">
     <span class="md-ellipsis">
       Running with Annotation and Submission:
@@ -417,8 +421,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#running-submission-only" class="md-nav__link">
     <span class="md-ellipsis">
       Running Submission only:
@@ -426,23 +430,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#submission-pre-requisites" class="md-nav__link">
     <span class="md-ellipsis">
       Submission Pre-requisites:
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -637,10 +631,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="(3) Customizing parameters by modifying the nextflow.config file:">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#understanding-profiles-and-environments" class="md-nav__link">
     <span class="md-ellipsis">
       Understanding Profiles and Environments:
@@ -648,8 +646,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#running-with-annotation-and-submission" class="md-nav__link">
     <span class="md-ellipsis">
       Running with Annotation and Submission:
@@ -657,8 +655,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#running-submission-only" class="md-nav__link">
     <span class="md-ellipsis">
       Running Submission only:
@@ -666,23 +664,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#submission-pre-requisites" class="md-nav__link">
     <span class="md-ellipsis">
       Submission Pre-requisites:
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -794,17 +782,17 @@ Certain parameters such as -profile and pathogen type (<code>--virus</code>) are
 <p><code>nextflow run main.nf -profile test,singularity --virus -params-file &lt;standard_params.yml or standard_params.json&gt;</code></p>
 <h3 id="3-customizing-parameters-by-modifying-the-nextflowconfig-file">(3) Customizing parameters by modifying the nextflow.config file:</h3>
 <p>Default parameters can be also be overridden by making changes to the nextflow.config file located in the project directory. By default, if the test option is not provided during runtime, the run configuration will be read from the nextflow.config file.</p>
-<h4 id="understanding-profiles-and-environments">Understanding Profiles and Environments:</h4>
+<h2 id="understanding-profiles-and-environments">Understanding Profiles and Environments:</h2>
 <p>Within the nextflow pipeline the <code>-profile</code> parameter is required to specify the computing environment of the run. The options of <code>docker</code>, <code>singularity</code> or <code>conda</code> can passed in. The conda environment is less stable than the docker or singularity. We recommend you choose docker or singularity when running the pipeline.</p>
 <p>Optionally, the <code>test</code> option can be specified in the <code>-profile</code> parameter. If test is not specified, parameters are read from the nextflow.config file. The test params should remain the same for testing purposes.</p>
-<h4 id="running-with-annotation-and-submission">Running with Annotation and Submission:</h4>
+<h2 id="running-with-annotation-and-submission">Running with Annotation and Submission:</h2>
 <p>You will want to define whether to run the full pipeline with submission or without submission using the <code>--submission</code> and <code>--annotation</code> flags. By default the pipeline will run both sub-workflows and submit to submit to GenBank and SRA. If you want to submit to only SRA, specify <code>--genbank false --sra</code>.</p>
 <p><code>nextflow run main.nf -profile &lt;singularity/docker/conda&gt; --virus --genbank --sra --submission_wait_time 5</code></p>
-<h4 id="running-submission-only">Running Submission only:</h4>
+<h2 id="running-submission-only">Running Submission only:</h2>
 <p>You will want to define whether to run the full pipeline with submission or without submission using the <code>--submission</code> and <code>--annotation</code> flags. By default, the pipeline will run both sub-workflows. To only run the submission sub-workflow, specify <code>--annotation false</code>.  By default the pipeline will submit to GenBank and SRA. If you want to submit to only SRA, specify <code>--genbank false --sra</code>.</p>
 <p>❗ Note: you can only submit raw files to SRA, not to Genbank.</p>
 <p><code>nextflow run main.nf -profile &lt;test,standard&gt;,&lt;singularity,docker&gt; --&lt;virus,bacteria&gt; --annotation false --sra --submission_wait_time 5</code></p>
-<h4 id="submission-pre-requisites">Submission Pre-requisites:</h4>
+<h2 id="submission-pre-requisites">Submission Pre-requisites:</h2>
 <p>The submission component of the pipeline is adapted from SeqSender public database submission pipeline. It has been developed to allow the user to create a config file to select which databases they would like to upload to and allows for any possible metadata fields by using a YAML to pair the database's metadata fields with your personal metadata field columns. The requirements for this portion of the pipeline to run are listed below.</p>
 <p>(A) Create Appropriate Accounts as needed for the SeqSender public database submission pipeline integrated into TOSTADAS:</p>
 <ul>

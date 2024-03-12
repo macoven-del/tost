@@ -4,10 +4,12 @@
 ### Dependencies:
 - Nextflow v. 21.01.03 or newer
 - Compute environment (docker, singularity or conda)
+
 ❗ Note: If you are a CDC user, please follow the set-up instructions found on this page: [CDC User Guide](https://github.com/CDCgov/tostadas/wiki/CDC-User-Guide)
 
 ### (1) Clone the repository to your local machine:
 * `git clone https://github.com/CDCgov/tostadas.git`
+
 ❗ Note: If you have mamba or nextflow installed in your local environment, you may skip steps 2, 3 (mamba installation) and 6 (nextflow installation) accordingly.
 
 ### (2) Install mamba and add it to your PATH
@@ -18,6 +20,7 @@
 `curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download`
 `Mambaforge-$(uname)-$(uname -m).sh`
 `bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/mambaforge`
+
 2b. Add mamba to PATH:
 
 `export PATH="$HOME/mambaforge/bin:$PATH"`
@@ -25,9 +28,11 @@
 3a. Create an empty conda environment to install Nextflow into
 
 `conda create --name tostadas`
+
 3b. Activate the environment
 
 `conda activate tostadas`
+
 Verify which environment is active by running the following conda command: `conda env list`. The active environment will be denoted with an asterisk `*`
 
 ### (4) Install Nextflow using mamba and the bioconda Channel
@@ -36,9 +41,11 @@ Verify which environment is active by running the following conda command: `cond
 
 #### Ensure installation was successful by running nextflow with the `-v` or `-version` flag 
 `nextflow -v`
+
 Expected output:
 
 `nextflow version <CURRENT VERSION>`
+
 The exact version of Nextflow returned will differ from installation to installation. It is important that the command executes successfully, and a version number is returned.
 
 ### (5) Update the default submissions config file with your NCBI username and password, and run the following nextflow command to execute the scripts with default parameters and the local run environment:
